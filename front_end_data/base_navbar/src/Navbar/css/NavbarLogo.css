@@ -1,0 +1,12 @@
+.__logoBox {
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    margin-right: 10px;
+    min-width: 150px;
+}
+
+.__logoImg {
+    display: inline;
+    height: 100%;
+}

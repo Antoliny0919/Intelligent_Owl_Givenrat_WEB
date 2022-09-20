@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.__login {
+    transition: box-shadow .5s;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: white;
+    margin-right: 50px;
+    margin-left: 15px;
+    padding: 10px 15px 10px 15px;
+    background-color: #337E38;
+    border-radius: 15px;
+    box-sizing: border-box;
+
+}
+
+.__login:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
