@@ -1,0 +1,23 @@
+@media screen and (min-width: 1450px) {
+    .__ImgBlock {
+        width: 500px;
+        margin-right: 100px;
+    }
+} 
+
+.main .__ImgBlock {
+    height: 500px;
+}
+
+.__ImgBlock {
+    display: flex;
+    padding: 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+img {
+    height: 100%;
+}

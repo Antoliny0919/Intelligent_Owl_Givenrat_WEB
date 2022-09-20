@@ -1,0 +1,14 @@
+.contentExplainBlock {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+#Explain {
+    display: inline;
+    border: 3px solid #357F2A;
+    background-color: #357F2A;
+    padding: 10px;
+    border-radius: 30px;
+}
+
