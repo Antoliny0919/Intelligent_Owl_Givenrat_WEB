@@ -5,7 +5,7 @@ export default class NavbarMini extends Component {
     render() {
         return(
             <a className='combineContent hide' href='#'>
-                <img src={this.props.combineContentImgPath}></img>
+                <img className='hide-img'src={this.props.combineContentImgPath}></img>
             </a>
 
 
