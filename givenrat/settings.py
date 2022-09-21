@@ -128,7 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'search/templates/search/base_navbar/build/static'),
-                    
+                    os.path.join(BASE_DIR, 'search/templates/search/homepage_main/build/static'),
                     ]
 
 # Default primary key field type
