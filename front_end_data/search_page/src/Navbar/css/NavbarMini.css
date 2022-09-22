@@ -4,11 +4,13 @@
     }
 }
 
+
 .combineContent {
     height: 100%;
-    display: none
+    display: none;
+    width: 100%;
 }
 
-.hide-bar {
-    heigth: 100%;
+.hide-img {
+    height: 100%;
 }
