@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+.inputspace-block {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 3px solid #1C3F24;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 50px;
+  transition: box-shadow .5s;
+}
+
+.item-attribution-name {
+  text-align: center;
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 20px;
+  color: #B8BF29;
+}
+
+.item-attribution-inputspace {
+  padding: 10px 30px 10px 30px;
+  display: inline-block;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: #285D34;
+  border: 2px solid #307C24;
+}
+
+.inputspace-block:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}

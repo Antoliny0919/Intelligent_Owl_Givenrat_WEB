@@ -1,0 +1,26 @@
+#search-form-area {
+  box-sizing: border-box;
+  height: 500px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#form-area-padding {
+  box-sizing: inherit;
+  display: flex;
+  height: 100%;
+  padding: 50px 0px 50px 0px;
+  background-repeat: no-repeat;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+#form-submit-button {
+  display: block;
+  padding: 20px 60px 20px 60px;
+  border-radius: 5px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}

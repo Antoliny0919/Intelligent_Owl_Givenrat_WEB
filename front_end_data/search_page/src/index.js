@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import SymbolBase from './Symbol/SymbolBase';
 import NavbarBase from './Navbar/NavbarBase';
 import ExplainBase from './Explain/ExplainBase';
+import FormTableBase from './FormTable/FormTableBase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <NavbarBase></NavbarBase>
     <SymbolBase></SymbolBase>
     <ExplainBase></ExplainBase>
+    <FormTableBase></FormTableBase>
   </React.StrictMode>
 );
 
