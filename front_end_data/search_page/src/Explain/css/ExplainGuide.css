@@ -4,9 +4,10 @@
 .open-guideline-button {
   display: block;
   height: 60px;
-  width: 30%;
+  width: 80%;
   font-size: 20px;
   border-radius: 20px;
+  margin-top: 40px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;
@@ -31,9 +32,10 @@
 
   display: block;
   height: 60px;
-  width: 30%;
+  width: 80%;
   font-size: 20px;
   border-radius: 20px;
+  margin-top: 40px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;

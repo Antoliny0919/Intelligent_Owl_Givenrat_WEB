@@ -1,7 +1,6 @@
-import ExplainGuide from './components/ExplainGuide';
-import ExplainContent from './components/ExplainContent';
-import './css/ExplainBase.css';
 import { useState } from 'react';
+import ExplainMainImg from './components/ExplainMainContent';
+import './css/ExplainBase.css';
 
 export default function ExplainBase() {
 
@@ -12,16 +11,19 @@ export default function ExplainBase() {
 
     open_guideline_class: 'open-guideline-button',
     close_guideline_class: 'close-guideline-button',
+
+  // 설명 파트에 나올 이미지
+    explain_main_img_path: require('./img/search_main_img.png')
   }
 
   // 가이드 라인 설명 열고 닫기위한 불리언값
-  const [readMore, setReadMore] = useState(false);
+  const [readMore, setReadMore] = useState(true);
 
   // 공산품 검색 가이드 라인 버튼 style 변화
-  const [buttonClass, setButtonClass] = useState(state.open_guideline_class);
+  const [buttonClass, setButtonClass] = useState(state.close_guideline_class);
 
   // 공산품 검색 가이드 라인 버튼 클릭에 대한 텍스트 변경
-  const [buttonText, setButtonText] = useState(state.open_guideline_text);
+  const [buttonText, setButtonText] = useState(state.close_guideline_text);
 
   // 가이드 라인 설명 열고 닫을 수 있게 해주는 함수
   const changeReadMore = () => {
@@ -39,17 +41,17 @@ export default function ExplainBase() {
 
   
   return (
-    <explain id="explain-area">
-      <div className='explain-image-block'>
-        
+    <div id="explain-area">
+      <div id="explain-block">
+        <ExplainMainImg 
+        img_path={state.explain_main_img_path}
+        guideline_button_text={buttonText}
+        guideline_button_style={buttonClass}
+        read_more_func={changeReadMore}
+        readMore={readMore}
+        >
+        </ExplainMainImg>
       </div>
-      {readMore && <ExplainContent></ExplainContent>}
-
-      <ExplainGuide 
-      guideline_button_text={buttonText}
-      guideline_button_style={buttonClass}
-      read_more_func={changeReadMore}
-      ></ExplainGuide>
-    </explain>
+    </div>
   )
 }
