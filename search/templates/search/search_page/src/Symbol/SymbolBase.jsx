@@ -20,14 +20,14 @@ export default function SymbolBase() {
           </div>
         </div>
       </main>
-      <maintext id="symbol-text-area">
+      <div id="symbol-text-area">
         <div className="symbol-text-block">
           <SymbolText 
           text={state.symbol_text}
           imgPath={state.symbol_text_imgpath}
           ></SymbolText>
         </div>
-      </maintext>
+      </div>
     </Fragment>
   )
 }

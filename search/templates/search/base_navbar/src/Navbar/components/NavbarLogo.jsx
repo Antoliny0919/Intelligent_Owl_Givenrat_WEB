@@ -10,7 +10,7 @@ export default class NavbarLogo extends Component {
         return (
             <Fragment>
                 <NavbarMini combineContentImgPath={this.props.combineContentImgPath}></NavbarMini>
-                <a className='navBar __logoBox' href='#'>
+                <a className='navBar __logoBox' href={this.props.link}>
                     <img 
                     className='navbar __logoImg'
                     src={this.props.imgPath}

@@ -12,7 +12,8 @@ class NavbarBase extends Component {
         super(props)
         this.state = {
             // (Public폴더 하위 경로 설정) Navbar 왼쪽부분 로고 imgPath
-            logo: {imgPath: require('./Img/givenrat_logo.png')},
+            logo: {imgPath: require('./Img/givenrat_logo.png'),
+                    link: '../'},
 
             // Navbar 왼쪽부분 로고 오른쪽 메인 컨텐츠 영역
             content: [
@@ -43,6 +44,7 @@ class NavbarBase extends Component {
                     <div className='navBar __contents'>
                         <NavbarLogo
                         imgPath={this.state.logo.imgPath}
+                        link={this.state.logo.link}
                         combineContentImgPath={this.state.combineContent.imgPath}
                         >
                         </NavbarLogo>

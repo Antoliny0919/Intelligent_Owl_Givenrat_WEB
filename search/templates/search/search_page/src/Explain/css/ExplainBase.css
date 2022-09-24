@@ -1,0 +1,18 @@
+@media screen and (min-width: 1450px) {
+  #explain-block {
+    max-width: 1500px;
+  }
+}
+
+#explain-area {
+  background-color: #376F46;
+}
+
+#explain-block {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
