@@ -12,12 +12,14 @@ export default function FormTableBase() {
       [
         // 가격 인풋 데이터
         {name: '💲 가격 💲',
-        style: 'inputspace-block price'}
+        style: 'inputspace-block price',
+        number: 1}
       ],
       [
         // 품명 인풋 데이터
         {name: '📦 품명 📦',
-        style: 'inputspace-block name',}
+        style: 'inputspace-block name',
+        number: 2}
       ],
     ],
 
@@ -26,12 +28,14 @@ export default function FormTableBase() {
       [
         // 속성 인풋 데이터
         {name: '🔑 속성 🔑',
-        style: 'inputspace-block attribute',}
+        style: 'inputspace-block attribute',
+        number: 3}
       ],
       [
         //속성 인풋 데이터
         {name: '🔑 속성 🔑',
-        style: 'inputspace-block attribute',}
+        style: 'inputspace-block attribute',
+        number: 4}
       ],
     ]
   }

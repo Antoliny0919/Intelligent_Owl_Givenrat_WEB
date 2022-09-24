@@ -4,10 +4,18 @@
   }
 }
 
+
 @media screen and (max-width: 1500px) {
   div.explain-image-block {
-    height: 500px;
+    height: 600px;
   }
+}
+
+@media screen and (max-width: 1050px) {
+  div #explain-image-block {
+    height: 450px;
+  }
+
 }
 
 @media screen and (max-width: 870px) {
@@ -21,7 +29,7 @@
 
 .explain-image-block {
   display: flex;
-  height: 600px;
+  height: 700px;
   width: 100%;
   flex-direction: row;
 }
