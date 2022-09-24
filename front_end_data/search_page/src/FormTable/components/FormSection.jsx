@@ -1,9 +1,9 @@
 import '../css/FormSection.css'
 
-export default function FormSection({ inputText }) {
+export default function FormSection({ inputText, inputStyle }) {
 
   return (
-    <div className="inputspace-block">
+    <div className={inputStyle}>
       <span className="item-attribution-name">{inputText}</span>
       <input className="item-attribution-inputspace"></input>
     </div> 

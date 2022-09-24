@@ -4,14 +4,35 @@ import './css/FormTableBase.css';
 export default function FormTableBase() {
   
   const state = {
+    // form칸 왼쪽에 있을 심벌 이미지
     form_image : require('./img/questionbox.png'),
+
+    // 첫번째 폼 라인의 데이터
     form_first_section: [
-      '💲 가격 💲',
-      '📦 품명 📦',
+      [
+        // 가격 인풋 데이터
+        {name: '💲 가격 💲',
+        style: 'inputspace-block price'}
+      ],
+      [
+        // 품명 인풋 데이터
+        {name: '📦 품명 📦',
+        style: 'inputspace-block name',}
+      ],
     ],
+
+    // 두번째 폼 라인의 데이터(세번째, 네번째 인풋은 같은 데이터를 가짐)
     form_second_section: [
-      '🔑 속성 🔑',
-      '🔑 속성 🔑',
+      [
+        // 속성 인풋 데이터
+        {name: '🔑 속성 🔑',
+        style: 'inputspace-block attribute',}
+      ],
+      [
+        //속성 인풋 데이터
+        {name: '🔑 속성 🔑',
+        style: 'inputspace-block attribute',}
+      ],
     ]
   }
 
