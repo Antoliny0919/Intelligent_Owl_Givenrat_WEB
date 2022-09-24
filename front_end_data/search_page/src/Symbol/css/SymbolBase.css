@@ -14,6 +14,23 @@
   }
 }
 
+@media screen and (max-width: 1050px) {
+  main {
+    max-height: 400px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  main {
+    max-height: 350px;
+  }
+
+  div.symbol-image-block {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
 main {
   background-color: #347F39;
   height: 600px;

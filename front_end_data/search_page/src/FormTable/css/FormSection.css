@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
+@media screen and (max-width: 1100px) {
+  div .inputspace-block{
+    padding: 7px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  #change-size{
+    padding: 7px 20px 7px 20px;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  #change-size {
+    padding: 0px;
+  }
+}
+
+
+
+
+
+
 .inputspace-block {
   display: flex;
   flex-direction: column;

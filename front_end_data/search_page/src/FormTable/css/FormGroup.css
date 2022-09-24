@@ -1,5 +1,14 @@
+@media screen and (max-width: 950px) {
+  div .form-group {
+    margin-top: 30px;
+  }
+}
+
+
 .form-group {
   display: flex;
   flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 60px;
 }

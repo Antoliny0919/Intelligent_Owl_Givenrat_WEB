@@ -16,7 +16,7 @@ export default function FormBase({ imgPath, formFirstSection, formSecondSection 
             formSectionData={formSecondSection}
             >
             </FormGroup>
-            <button id="form-submit-button"type="submit">검색 👀</button>
+            <button id="form-submit-button" type="submit">검색 👀</button>
           </form>
         </div>
       </div>
