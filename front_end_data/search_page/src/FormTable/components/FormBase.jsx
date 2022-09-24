@@ -8,7 +8,7 @@ export default function FormBase({ imgPath, formFirstSection, formSecondSection 
       <div id='form-area-padding'>
         <img src={imgPath} id='form-image'></img>
         <div>
-          <form>
+          <form id="form-main">
             <FormGroup
             formSectionData={formFirstSection}
             ></FormGroup>
@@ -16,7 +16,7 @@ export default function FormBase({ imgPath, formFirstSection, formSecondSection 
             formSectionData={formSecondSection}
             >
             </FormGroup>
-            {/* <button id="form-submit-button"type="submit"></button> */}
+            <button id="form-submit-button"type="submit">검색 👀</button>
           </form>
         </div>
       </div>

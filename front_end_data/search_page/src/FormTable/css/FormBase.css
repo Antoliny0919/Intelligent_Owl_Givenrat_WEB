@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+#form-main {
+  display: flex;
+  flex-direction: column;
+}
+
+
 #search-form-area {
   box-sizing: border-box;
-  height: 500px;
+  height: 550px;
   margin-left: 100px;
   margin-right: 100px;
 }
@@ -18,9 +26,20 @@
 
 #form-submit-button {
   display: block;
-  padding: 20px 60px 20px 60px;
+  padding: 10px 30px 10px 30px;
+  border: 2px solid #A3A3A3;
   border-radius: 5px;
-  margin-top: 100px;
+  background-color: #337542;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Gowun Dodum', sans-serif;
+  color: white;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;;
+  transition: all .9s;
+}
+
+#form-submit-button:hover {
+  box-shadow: #A3A3A3 0px 1px 2px, #A3A3A3 0px 1px 2px;
 }
