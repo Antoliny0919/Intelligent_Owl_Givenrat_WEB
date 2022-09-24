@@ -1,6 +1,12 @@
+import TableHead from "./TableHead";
+import TableBody from "./TableBody";
+
 export default function TableBase() {
 
   return (
-    <div> </div>
+    <div id="table-area">
+      <TableHead></TableHead>
+      <TableBody></TableBody>
+    </div>
   )
 }
