@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { getProducts } from '../products_data';
 import FormBase from './components/FormBase';
 import TableBase from './components/TableBase';
 import './css/FormTableBase.css';
@@ -41,6 +43,13 @@ export default function FormTableBase() {
     ]
   }
 
+  const [productsData, setProductsData] = useState([])
+
+  const handleLoadClick = async () => {
+    const { product } = await getProducts();
+    setProductsData(product);
+  }
+
   return (
     <div id="search-form-data-area">
       <span id="dividing-line"></span>
@@ -53,6 +62,6 @@ export default function FormTableBase() {
       <span id="dividing-line"></span>
       <TableBase>
       </TableBase>
-    </div>
+    </div> 
   )
 }
