@@ -10,8 +10,8 @@ export default function TableBody({ items, nextData, readMoreFunc }) {
         <TableBodyTbody items={items}></TableBodyTbody>
       </table>
       <div id="read-more-button-block">
-        {nextData && <a id="read-more-button" onClick={readMoreFunc}>👀 더 보기</a>}
-        {/* {nextData || <h1>끝입니다</h1>} */}
+        {nextData ? <a className="read-more-button" onClick={readMoreFunc}>👀 더 보기</a> : <p className='read-more-button' id='no-data'>더 이상 데이터가 없습니다!</p>}
+
       </div>
     </div>
   )

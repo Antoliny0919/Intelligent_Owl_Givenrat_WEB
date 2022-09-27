@@ -43,25 +43,35 @@ export default function FormTableBase() {
     ]
   }
 
+  // 공산품 데이터
   const [items, setItems] = useState([])
 
+  // 공산품 데이터 페이지네이션(다음 데이터가 있는지 확인)
   const [nextPage, setNextPage] = useState('')
 
+  // 공산품 데이터 가져오기
   const handleLoad = async (options) => {
     const { results, next } = await getProducts(options);
     if (nextPage === '') {
       setItems(results);
+
+    // next가 null일경우 다음데이터가 없음(모든 데이터를 가져옴)
     } else if (next === null) {
       setNextPage(next);
       setItems([...items, ...results]);
+      return;
+
+    // 기존데이터에 받은데이터를 추가(read more)
     } else {
     setItems([...items, ...results]);
   }
+
+    // next로 오는 값이(url) --> 쿼리값만 추출
     const position = next.indexOf('?');
     const getQuery = next.slice(position+1);
     setNextPage(getQuery);
   };
-
+  
   const handleReadMore = () => {
     handleLoad(nextPage);
   }
