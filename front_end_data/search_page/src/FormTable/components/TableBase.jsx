@@ -1,12 +1,16 @@
 import TableHead from "./TableHead";
 import TableBody from "./TableBody";
 
-export default function TableBase() {
+export default function TableBase({ items, nextData, readMoreFunc }) {
 
   return (
     <div id="table-area">
       <TableHead></TableHead>
-      <TableBody></TableBody>
+      <TableBody
+      items={items}
+      nextData={nextData}
+      readMoreFunc={readMoreFunc}
+      ></TableBody>
     </div>
   )
 }

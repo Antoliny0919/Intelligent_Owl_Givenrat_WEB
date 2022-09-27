@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
 #table-body-area {
   display: flex;
+  flex-direction: column;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -11,4 +14,26 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #795B1C;
+}
+
+#read-more-button-block {
+  width: 80%;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #664D17;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+#read-more-button {
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 20px 50px 20px 50px;
+  font-family: 'Gowun Dodum', sans-serif;
+  margin: inherit;
+  color: #CFD126;
 }

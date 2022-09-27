@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getProducts } from '../products_data';
 import FormBase from './components/FormBase';
 import TableBase from './components/TableBase';
@@ -43,12 +43,32 @@ export default function FormTableBase() {
     ]
   }
 
-  const [productsData, setProductsData] = useState([])
+  const [items, setItems] = useState([])
 
-  const handleLoadClick = async () => {
-    const { product } = await getProducts();
-    setProductsData(product);
+  const [nextPage, setNextPage] = useState('')
+
+  const handleLoad = async (options) => {
+    const { results, next } = await getProducts(options);
+    if (nextPage === '') {
+      setItems(results);
+    } else if (next === null) {
+      setNextPage(next);
+      setItems([...items, ...results]);
+    } else {
+    setItems([...items, ...results]);
   }
+    const position = next.indexOf('?');
+    const getQuery = next.slice(position+1);
+    setNextPage(getQuery);
+  };
+
+  const handleReadMore = () => {
+    handleLoad(nextPage);
+  }
+
+  useEffect(() => {
+    handleLoad(nextPage);
+  }, [ ]);
 
   return (
     <div id="search-form-data-area">
@@ -60,7 +80,11 @@ export default function FormTableBase() {
       >
       </FormBase>
       <span id="dividing-line"></span>
-      <TableBase>
+      <TableBase
+      items={items}
+      nextData={nextPage}
+      readMoreFunc={handleReadMore}
+      >
       </TableBase>
     </div> 
   )

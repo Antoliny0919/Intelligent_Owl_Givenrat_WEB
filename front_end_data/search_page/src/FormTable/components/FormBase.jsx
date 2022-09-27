@@ -1,7 +1,7 @@
 import FormGroup from '../components/FormGroup';
 import '../css/FormBase.css';
 
-export default function FormBase({ imgPath, formFirstSection, formSecondSection }) {
+export default function FormBase({ imgPath, formFirstSection, formSecondSection}) {
   
   return (
     <div id='search-form-area'>

@@ -16,16 +16,8 @@ def homepage(request):
 def searchpage(request):
   return render(request, 'search/search_page/build/search_page.html')
 
-# class ProductAPIView(APIView, LimitOffsetPagination):
-  
-#   def get(self, request):
-#     queryset = Product.objects.all()
-#     serializer = ProductSimpleSerializer(queryset, many=True)
-#     return self.get_paginated_response(serializer.data)
-
 class ProductViewSet(viewsets.ModelViewSet):
   queryset = Product.objects.all()
   serializer_class = ProductSimpleSerializer
-  permission_classes = [permissions.IsAuthenticated]
   
 
