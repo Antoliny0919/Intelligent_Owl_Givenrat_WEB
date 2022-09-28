@@ -6,6 +6,7 @@ import './css/FormTableBase.css';
 
 
 const INPUTCOUNT = 4;
+const PRODUCTSCOUNT = 22
 
 export default function FormTableBase() {
   
@@ -19,14 +20,14 @@ export default function FormTableBase() {
         // 가격 인풋 데이터
         {name: '💲 가격 💲',
         style: 'inputspace-block price',
-        queryName: 'price',
+        queryName: 'exact_price',
         }
       ],
       [
         // 품명 인풋 데이터
         {name: '📦 품명 📦',
         style: 'inputspace-block name',
-        queryName: 'name',
+        queryName: 'contains_name',
         }
       ],
     ],
@@ -37,14 +38,14 @@ export default function FormTableBase() {
         // 속성 인풋 데이터
         {name: '🔑 속성 🔑',
         style: 'inputspace-block attribute',
-        queryName: 'attribute',
+        queryName: 'contains_first_attribute',
         }
       ],
       [
         //속성 인풋 데이터
         {name: '🔑 속성 🔑',
         style: 'inputspace-block attribute',
-        queryName: 'attribute',
+        queryName: 'contains_second_attribute',
         }
       ],
     ]
@@ -61,8 +62,19 @@ export default function FormTableBase() {
 
   // 공산품 데이터 가져오기
   const handleLoad = async (options) => {
-    const { results, next} = await getProducts(options);
-    if (nextPage === '') {
+    const { results, next, count} = await getProducts(options);
+
+    // 검색을 통해서 물건을 찾을때 무조건 count값이 PRODUCTSCOUNT(ALL)보다 작을 수밖에 없음
+    // 찾은 물품만 렌더링
+    if (count < PRODUCTSCOUNT) {
+      setItems(results);
+      setNextPage('');
+      return;
+    }
+
+    // 검색 키워드에 해당하는 물건이 없을때
+    
+      else if (nextPage === '') {
       setItems(results);
 
     // next가 null일경우 다음데이터가 없음(모든 데이터를 가져옴)
