@@ -1,0 +1,15 @@
+@media screen and (max-width: 1100px) {
+    a.hide {
+        display: block;
+    }
+}
+
+
+.combineContent {
+    height: 100%;
+    display: none
+}
+
+.hide-bar {
+    height: 100%;
+}

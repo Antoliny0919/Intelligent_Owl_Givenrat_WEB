@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+#table-head-title-block {
+  display: flex;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+  width: 100%;
+  background-color: #664D17;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+#table-head-title-text {
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Gowun Dodum', sans-serif;
+  color: #CFD126;
+}

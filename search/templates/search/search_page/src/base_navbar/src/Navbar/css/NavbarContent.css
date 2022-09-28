@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+@media screen and (max-width: 1100px) {
+    ul.__contentBlock {
+        display: none;
+    }
+}
+
+
+.__contentBlock {
+    display: flex;
+    justify-content: center;
+    line-height: 60px;
+    margin: 0px;
+}
+
+.__content {
+    transition: color .5s;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Gowun Dodum', sans-serif;
+    color: white;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 15px;
+}
+
+.__content:hover {
+    color: #997552;
+}
