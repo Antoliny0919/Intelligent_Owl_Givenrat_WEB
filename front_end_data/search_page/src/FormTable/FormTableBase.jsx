@@ -4,6 +4,9 @@ import FormBase from './components/FormBase';
 import TableBase from './components/TableBase';
 import './css/FormTableBase.css';
 
+
+const INPUTCOUNT = 4;
+
 export default function FormTableBase() {
   
   const state = {
@@ -16,13 +19,15 @@ export default function FormTableBase() {
         // 가격 인풋 데이터
         {name: '💲 가격 💲',
         style: 'inputspace-block price',
-        number: 1}
+        queryName: 'price',
+        }
       ],
       [
         // 품명 인풋 데이터
         {name: '📦 품명 📦',
         style: 'inputspace-block name',
-        number: 2}
+        queryName: 'name',
+        }
       ],
     ],
 
@@ -32,26 +37,31 @@ export default function FormTableBase() {
         // 속성 인풋 데이터
         {name: '🔑 속성 🔑',
         style: 'inputspace-block attribute',
-        number: 3}
+        queryName: 'attribute',
+        }
       ],
       [
         //속성 인풋 데이터
         {name: '🔑 속성 🔑',
         style: 'inputspace-block attribute',
-        number: 4}
+        queryName: 'attribute',
+        }
       ],
     ]
   }
 
   // 공산품 데이터
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
 
   // 공산품 데이터 페이지네이션(다음 데이터가 있는지 확인)
-  const [nextPage, setNextPage] = useState('')
+  const [nextPage, setNextPage] = useState('');
+
+  // 공산품 검색 키워드(input.value)
+  const [searchKeyWord, setSearchKeyWord] = useState('');
 
   // 공산품 데이터 가져오기
   const handleLoad = async (options) => {
-    const { results, next } = await getProducts(options);
+    const { results, next} = await getProducts(options);
     if (nextPage === '') {
       setItems(results);
 
@@ -64,21 +74,39 @@ export default function FormTableBase() {
     // 기존데이터에 받은데이터를 추가(read more)
     } else {
     setItems([...items, ...results]);
-  }
+    }
 
     // next로 오는 값이(url) --> 쿼리값만 추출
     const position = next.indexOf('?');
     const getQuery = next.slice(position+1);
     setNextPage(getQuery);
   };
+
+
+  // input에서 사용자가 입력한 keyword를 추출해서 query로 만듬
+  const searchProduct = (e) => {
+    e.preventDefault();
+    let query = ``
+    for (let i = 0; i < INPUTCOUNT; i++) {
+      if (e.target.form[i].value === '') {
+        continue;
+      } else if (query === ``) {
+        query += `${e.target.form[i].name}=${e.target.form[i].value}`
+        continue;
+      }
+      query += `&${e.target.form[i].name}=${e.target.form[i].value}`
+    }
+    setSearchKeyWord(query);
+  };
+
   
   const handleReadMore = () => {
-    handleLoad(nextPage);
+    handleLoad({nextPage, searchKeyWord});
   }
 
   useEffect(() => {
-    handleLoad(nextPage);
-  }, [ ]);
+    handleLoad({nextPage, searchKeyWord});
+  }, [searchKeyWord]);
 
   return (
     <div id="search-form-data-area">
@@ -87,6 +115,7 @@ export default function FormTableBase() {
       imgPath={state.form_image}
       formFirstSection={state.form_first_section}
       formSecondSection={state.form_second_section}
+      searchProductFunc={searchProduct}
       >
       </FormBase>
       <span id="dividing-line"></span>

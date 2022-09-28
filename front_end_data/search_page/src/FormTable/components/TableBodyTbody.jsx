@@ -6,7 +6,7 @@ export default function TableBodyTbody({ items }) {
       {items.map((item) => {
         return (
         <tr className='tbody-item-block' key={item.id}>
-          <TableBodyItem key={item.id} item={item}></TableBodyItem>
+          <TableBodyItem item={item}></TableBodyItem>
         </tr>)
       })}
     </tbody>

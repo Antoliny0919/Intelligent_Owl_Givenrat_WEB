@@ -1,8 +1,10 @@
 from django.shortcuts import render
+
 from rest_framework import status, viewsets, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Product
 from .serializers import ProductSimpleSerializer
@@ -19,5 +21,7 @@ def searchpage(request):
 class ProductViewSet(viewsets.ModelViewSet):
   queryset = Product.objects.all()
   serializer_class = ProductSimpleSerializer
+  filter_backends = [DjangoFilterBackend]
+  filterset_fields = ['price', 'name', 'attribute',]
   
 
