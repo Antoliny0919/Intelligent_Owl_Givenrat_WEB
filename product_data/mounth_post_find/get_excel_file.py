@@ -1,43 +1,38 @@
+import wget
+import os
 import function.find_requirement_post_url as find_urls
 import function.find_xlsx as find_xlsx
+import function.download_xlsx_file as download_xlsx
 
 
 MOUNTH = '10월'
-page = ['1', '2', '3']
-url = "http://school062.com/bbs/board.php?bo_table=product_01&sfl=wr_subject&stx=%EC%B4%9D&sop=and&spt=-7915&page={}"
-
-# 중첩 시퀀스를 단일 시퀀스로 만들기
-def flatten(items, ignore_types=str):
-  for item in items:
-    if not isinstance(item, ignore_types):
-      yield from flatten(item)
-    else:
-      yield item
+PARSE_XLSX_SELECTOR = 'section#bo_v_file'
+PARSE_NAME_SELECTOR = 'section#bo_v_info'
+PAGE = ['1', '2', '3']
+url = "http://school062.com/bbs/board.php?bo_table=product_01&sfl=wr_subject&stx=%EC%B4%9D&sop=and&page={}"
+DOWNLOAD_PATH = '/Users/antoliny/intelligent_owl_givenrat/product_data/excel_files'
 
 
-# xlsx파일이 담길 리스트생성
-def make_xlsx_files_list():
-  download_xlsx_urls = []
+
+if __name__ == "__main__":
+
+  # 특정 월에 해당하는 공산품 엑셀파일이 담긴 포스트 주소 가져오기
+  user_set_mounth_urls = find_urls.rounds_post(url, MOUNTH, PAGE)
+
+  # 포스트에 있는 엑셀파일 주소들을 가져오기
+  xlsx_list = find_xlsx.make_xlsx_files_list()
+  xlsx_files = xlsx_list(user_set_mounth_urls, PARSE_XLSX_SELECTOR)
+  name_list = find_xlsx.make_xlsx_files_list()
+  xlsx_names = name_list(user_set_mounth_urls, PARSE_NAME_SELECTOR)
   
-  # url들(포스트)을 파싱해서 각 포스트에 있는 url에 있는 엑셀파일 추출
-  def get_xlsx_files(urls_posts):
-    
-    # flatten함수를 통해 url들을 한 배열에 모으기
-    for post in flatten(urls_posts):
-      download_xlsx_urls.append(post)
-    
-    return find_xlsx.parse(download_xlsx_urls)
-    
-  return get_xlsx_files
+  data = list(zip(xlsx_files, xlsx_names))
 
-
-
-# 특정 월에 해당하는 공산품 엑셀파일이 담긴 포스트 주소 가져오기
-user_set_mounth_urls = find_urls.rounds_post(url, MOUNTH, page)
-
-xlsx_list = make_xlsx_files_list()
-xlsx_files = xlsx_list(user_set_mounth_urls)
-print(xlsx_files)
+  os.chdir(DOWNLOAD_PATH)
+  # 리스트에 들어있는 엑셀파일들을 내 디렉터리에 추가 하기
+  
+  for xlsx_url, name in data:
+    wget.download(xlsx_url, f'{name} {MOUNTH} 공산품 데이터.xlsx', bar=download_xlsx.bar_custom)
+  
 
 
 
