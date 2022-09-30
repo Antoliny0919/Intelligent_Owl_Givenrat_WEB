@@ -1,7 +1,8 @@
 import django_filters
 from django.shortcuts import render
-
-from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import viewsets, status
 from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Product
@@ -33,4 +34,3 @@ class ProductViewSet(viewsets.ModelViewSet):
   filter_backends = (DjangoFilterBackend,)
   filterset_class = ProductFilter
   
-

@@ -11,6 +11,5 @@ urlpatterns = [
     path('', views.homepage),
     path('search/', views.searchpage),
     path('', include(router.urls)),
-
 ]
 
