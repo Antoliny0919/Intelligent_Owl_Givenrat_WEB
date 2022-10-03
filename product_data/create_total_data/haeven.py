@@ -3,10 +3,11 @@ import re
 import string
 import openpyxl
 
-column = list(string.ascii_uppercase)
+column = string.ascii_uppercase
 pattern = '[B-Z]'
+pattern2 = "(\w)"
+name = ['상품명', '제품명', '품명', ]  # '품명'이 들어가는지 확인
 # pattern = re.findall('[B-Z]', '$A$1:$L$85')
-
 
 
 
@@ -23,5 +24,17 @@ sheet = load_wb['2022년 신상품']
 sheet_range = sheet.print_area[0]
 max_column = re.findall(pattern, sheet_range)
 
-print(sheet['A1': 'C2'])
+position = column.find(''.join(max_column))
+
+sheet_column_range = column[:position+1]
+
+
+#ex [A1:C3]
+sheet_range = sheet_range.replace('$', '')
+all_data = sheet[sheet_range]
+for row in range(1, 10):
+  for column in sheet_column_range:
+    if(sheet[f'{column}{row}'].value == '상품명' ):
+      print(f'{column}{row}')
+      break
 

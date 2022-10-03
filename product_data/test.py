@@ -1,2 +1,4 @@
-test = 'hello'
-print(test.find('bar'))
+test = [32]
+
+if(test):
+  print(1)
