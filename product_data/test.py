@@ -1,4 +1,3 @@
-test = [32]
+test = ['hello', 'world']
 
-if(test):
-  print(1)
+print(test.find('hello'))

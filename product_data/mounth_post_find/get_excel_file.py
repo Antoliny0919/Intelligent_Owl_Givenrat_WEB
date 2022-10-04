@@ -26,18 +26,12 @@ if __name__ == "__main__":
   
   # xlsx_names 수정이 필요함
   data = list(zip(xlsx_files, xlsx_names))
-  print(xlsx_files)
-  print(xlsx_names)
-  print(len(xlsx_names))
-
-
-
 
   os.chdir(DOWNLOAD_PATH)
   # 리스트에 들어있는 엑셀파일들을 내 디렉터리에 추가 하기
   
-  # for xlsx_url, name in data:
-  #   wget.download(xlsx_url, f'{name} {MOUNTH} 공산품 데이터.xlsx', bar=download_xlsx.bar_custom)
+  for xlsx_url, name in data:
+    wget.download(xlsx_url, f'{name} {MOUNTH} 공산품 데이터.xlsx', bar=download_xlsx.bar_custom)
   
 
 

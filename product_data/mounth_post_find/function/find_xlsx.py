@@ -8,8 +8,11 @@ def parse(posts: MutableSequence) -> MutableSequence:
   
   def parse_data(selector: str):
     data_list = []
+    index = 0
+
     for post in posts:
-      
+      # post_xlsx_cnt --> 해당 포스트에 xlsx데이터 링크 갯수
+      post_xlsx_cnt = 0
       response = requests.get(post)
       target_page = response.text
       parse = soup(target_page, 'html.parser')
@@ -17,27 +20,33 @@ def parse(posts: MutableSequence) -> MutableSequence:
       
       # xlsx파일이 여러개인 포스트가 존재
       if (selector == 'section#bo_v_file'):
+        
         for file_area in parse_range:
-          # !파일확장자 체크 가능!
           atag_file = file_area.find_all('a')
-          print(atag_file)
-          xlsx_count.append(len(atag_file))
+          post_xlsx_cnt += len(atag_file)
+          
           # a태그 속성값(다운로드url)에 접근해서 배열에 추가
           for file in atag_file:
-            data_list.append(file['href'])
             
-      #
+            # 파일 확장자가 pdf인 경우에는 xlsx데이터 갯수 차감
+            if(file.find('strong').get_text().endswith('pdf')):
+              post_xlsx_cnt -= 1
+              continue
+            data_list.append(file['href'])
+        xlsx_count.append(post_xlsx_cnt)
+            
+            
+      # 해당 포스트의 작성자 부분
       elif (selector == 'section#bo_v_info'):
-        print(xlsx_count)
-        print(len(xlsx_count))
+        
         for file_name in parse_range:
 
           span_name = file_name.find('span', attrs={'class': 'sv_member'})
-          data_list.append(span_name.get_text())
+          data_list.extend([span_name.get_text()] * xlsx_count[index])
+          index += 1
           
-        
-    
     return data_list
+  
   return parse_data
 
 
@@ -54,14 +63,19 @@ def make_xlsx_files_list():
   download_xlsx_urls = []
   parser_object = object()
   # url들(포스트)을 파싱해서 각 포스트에 있는 url에 있는 엑셀파일 추출
+  
   def get_xlsx_files(urls_posts, selector):
     nonlocal parser_object
+    
     # flatten함수를 통해 url들을 한 배열에 모으기
     if (not download_xlsx_urls):
+      
       for post in flatten(urls_posts):
         download_xlsx_urls.append(post)
       parser_object = parse(download_xlsx_urls)
+      
       return parser_object(selector)
+    
     return parser_object(selector)
     
   return get_xlsx_files
