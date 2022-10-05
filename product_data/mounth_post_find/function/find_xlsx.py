@@ -27,9 +27,10 @@ def parse(posts: MutableSequence) -> MutableSequence:
           
           # a태그 속성값(다운로드url)에 접근해서 배열에 추가
           for file in atag_file:
-            
+            xlsx_file_name = file.find('strong').get_text()
             # 파일 확장자가 pdf인 경우에는 xlsx데이터 갯수 차감
-            if(file.find('strong').get_text().endswith('pdf')):
+            # 유림에프에스 xlsb확장자 사용하지만 총 데이터는 xlsx를 사용하기 때문에 가져올 필요가 없음
+            if(xlsx_file_name.endswith('pdf') or xlsx_file_name.endswith('xlsb')):
               post_xlsx_cnt -= 1
               continue
             data_list.append(file['href'])
