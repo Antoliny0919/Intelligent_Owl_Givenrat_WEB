@@ -5,7 +5,7 @@ import function.find_xlsx as find_xlsx
 import function.download_xlsx_file as download_xlsx
 
 
-MOUNTH = '10월'
+MOUNTH = '11월'
 PARSE_XLSX_SELECTOR = 'section#bo_v_file'
 PARSE_NAME_SELECTOR = 'section#bo_v_info'
 PAGE = ['1', '2', '3']
