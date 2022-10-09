@@ -66,6 +66,7 @@ export default function FormTableBase() {
   const handleLoad = async (options) => {
     const { results, next, count} = await getProducts(options);
 
+    // 검색 기능을 통한 데이터가 하나도 없을때
     if (count == 0 ) {
       setItems(results);
       setNextPage('');
@@ -143,6 +144,7 @@ export default function FormTableBase() {
       searchProductFunc={searchProduct}
       >
       </FormBase>
+      
       <span id="dividing-line"></span>
       <TableBase
       items={items}
