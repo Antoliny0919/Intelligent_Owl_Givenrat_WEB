@@ -2,14 +2,15 @@ import TableBodyThead from './TableBodyThead';
 import TableBodyTbody from './TableBodyTbody';
 import '../css/TableBody.css';
 
-export default function TableBody({ items, nextData, readMoreFunc, readDetailFunc, readHiddenFunc }) {
+export default function TableBody({ items, nextData, readMoreFunc, readDetailFunc, readHiddenFunc, noDataImg }) {
   return (
     <div id="table-body-area">
       <table id="table-body">
         <TableBodyThead></TableBodyThead>
         <TableBodyTbody 
-        items={items} 
-        readDetailFunc={readDetailFunc} 
+        items={items}
+        noDataImg={noDataImg}
+        readDetailFunc={readDetailFunc}
         readHiddenFunc={readHiddenFunc}
         >
         </TableBodyTbody>

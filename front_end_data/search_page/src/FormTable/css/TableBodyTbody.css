@@ -14,5 +14,6 @@
 }
 
 .tbody-item-block:hover {
-  cursor: pointer
+  cursor: pointer;
+  background-color: #DFB751;
 }

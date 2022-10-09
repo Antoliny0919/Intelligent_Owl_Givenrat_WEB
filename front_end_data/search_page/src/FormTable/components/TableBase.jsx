@@ -2,7 +2,7 @@ import TableHead from "./TableHead";
 import TableBody from "./TableBody";
 import '../css/TableBase.css';
 
-export default function TableBase({ items, nextData, readMoreFunc, readDetailFunc, readHiddenFunc }) {
+export default function TableBase({ items, nextData, readMoreFunc, readDetailFunc, readHiddenFunc, noDataImg }) {
 
   return (
     <div id="table-area">
@@ -11,6 +11,7 @@ export default function TableBase({ items, nextData, readMoreFunc, readDetailFun
       <TableBody
       items={items}
       nextData={nextData}
+      noDataImg={noDataImg}
       readMoreFunc={readMoreFunc}
       readDetailFunc={readDetailFunc}
       readHiddenFunc={readHiddenFunc}

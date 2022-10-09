@@ -60,31 +60,34 @@ export default function FormTableBase() {
   // 공산품 검색 키워드(input.value)
   const [searchKeyWord, setSearchKeyWord] = useState('');
 
+  const [noDataImg, setNoDataImg] = useState(false)
+
   // 공산품 데이터 가져오기
   const handleLoad = async (options) => {
     const { results, next, count} = await getProducts(options);
 
-    // 검색을 통해서 물건을 찾을때 무조건 count값이 PRODUCTSCOUNT(ALL)보다 작을 수밖에 없음
-    // 찾은 물품만 렌더링
-    if (count < PRODUCTSCOUNT) {
+    if (count == 0 ) {
       setItems(results);
       setNextPage('');
+      setNoDataImg(true);
       return;
     }
-
-    // 검색 키워드에 해당하는 물건이 없을때
-    
-      else if (nextPage === '') {
+    // 검색을 통해서 물건을 찾을때 무조건 count값이 PRODUCTSCOUNT(ALL)보다 작을 수밖에 없음
+    // 찾은 물품만 렌더링
+    else if (count < PRODUCTSCOUNT) {
       setItems(results);
-
-    // next가 null일경우 다음데이터가 없음(모든 데이터를 가져옴)
-    } else if (next === null) {
-      setNextPage(next);
-      setItems([...items, ...results]);
+      setNextPage('');
+      setNoDataImg(false);
       return;
+    
+    } else if (next === null) {
+    // next가 null일경우 다음데이터가 없음(모든 데이터를 가져옴)
+    setNextPage(next);
+    setItems([...items, ...results]);
+    return;
 
-    // 기존데이터에 받은데이터를 추가(read more)
     } else {
+    // 기존데이터에 받은데이터를 추가(read more)
     setItems([...items, ...results]);
     }
 
@@ -128,7 +131,7 @@ export default function FormTableBase() {
 
   useEffect(() => {
     handleLoad({nextPage, searchKeyWord});
-  }, [searchKeyWord]);
+  }, [searchKeyWord, noDataImg]);
 
   return (
     <div id="search-form-data-area">
@@ -144,6 +147,7 @@ export default function FormTableBase() {
       <TableBase
       items={items}
       nextData={nextPage}
+      noDataImg={noDataImg}
       readMoreFunc={handleReadMore}
       readDetailFunc={readDetail}
       readHiddenFunc={readHidden}
