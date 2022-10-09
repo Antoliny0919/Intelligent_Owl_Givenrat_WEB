@@ -4,6 +4,7 @@ import '../css/TableBodyItem.css';
 export default function TableBodyItem({ item }) {
   return (
     <Fragment>
+      
       <td className='tbody-item-size'>{item.name}</td>
       <td className='tbody-item-size'>{item.attribute}</td>
       <td className='tbody-item-size'>{item.brand}</td>

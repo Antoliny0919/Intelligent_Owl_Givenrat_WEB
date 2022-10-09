@@ -111,10 +111,20 @@ export default function FormTableBase() {
     setSearchKeyWord(query);
   };
 
-  
+  // 더보기 클랙했을시 데이터 더 가져오기
   const handleReadMore = () => {
     handleLoad({nextPage, searchKeyWord});
-  }
+  };
+
+  // 해당 아이템에 마우스를 올렸을시 세부사항 보기
+  const readDetail = (e) => {
+    e.currentTarget.className = 'tbody-item-block detail';
+  };
+
+  const readHidden = (e) => {
+    e.currentTarget.className = 'tbody-item-block';
+  };
+
 
   useEffect(() => {
     handleLoad({nextPage, searchKeyWord});
@@ -135,6 +145,8 @@ export default function FormTableBase() {
       items={items}
       nextData={nextPage}
       readMoreFunc={handleReadMore}
+      readDetailFunc={readDetail}
+      readHiddenFunc={readHidden}
       >
       </TableBase>
     </div> 

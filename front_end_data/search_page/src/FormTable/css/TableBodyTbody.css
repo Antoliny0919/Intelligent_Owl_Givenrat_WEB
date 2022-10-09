@@ -1,0 +1,18 @@
+.tbody-item-block {
+  display: flex;
+  max-height: 20px;
+  padding: 15px 0px 15px 0px;
+  overflow: hidden;
+  border-bottom: 3px solid #634B17;
+  transition: 3.0s;
+
+}
+
+.detail {
+  overflow: none;
+  max-height: 300px;
+}
+
+.tbody-item-block:hover {
+  cursor: pointer
+}

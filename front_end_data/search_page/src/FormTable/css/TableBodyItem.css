@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
-.tbody-item-block {
-  display: flex;
-  padding: 15px 0px 15px 0px;
-  overflow: hidden;
-  border-bottom: 3px solid #634B17;
-}
-
 .tbody-item-size {
   font-size: 15px;
   width: 100%;
@@ -14,7 +7,14 @@
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 20px;
   font-family: 'Gowun Dodum', sans-serif;
   color: white;
 }
+
+
+/* .tbody-item-size:hover {
+  
+  overflow 옵션 제거
+  height --> auto 설정 해당 블럭만
+
+} */
