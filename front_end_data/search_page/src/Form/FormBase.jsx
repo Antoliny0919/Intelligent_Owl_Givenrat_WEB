@@ -66,7 +66,6 @@ export default function FormBase() {
       query += `&${e.target.form[i].name}=${e.target.form[i].value}`
     }
     setSearchKeyWord(query);
-    console.log(query);
   };
 
 

@@ -8,7 +8,6 @@ import ExplainBase from './Explain/ExplainBase';
 import FormBase from './Form/FormBase';
 import TableBase from './Table/TableBase';
 
-// import FormTableBase from './FormTable/FormTableBase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +19,6 @@ root.render(
       <FormBase></FormBase>
       <TableBase></TableBase>
     </RecoilRoot>
-    {/* <FormTableBase></FormTableBase> */}
   </React.StrictMode>
 );
 

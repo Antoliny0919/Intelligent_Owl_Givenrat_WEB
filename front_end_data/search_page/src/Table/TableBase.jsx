@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react';
-import { useRecoilValue } from 'recoil';
-import { inputKeyWord } from '../Atom';
+import { useEffect } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { inputKeyWord, products, page, if_no_data } from '../Atom';
 import { getProducts } from '../products_data';
 import TableBlock from './components/TableBlock';
-import searchKeyWord from '../Form/FormBase';
 import './css/TableBase.css';
 
 
-const PRODUCTSCOUNT = 22
+const PRODUCTSCOUNT = 28
 
 export default function TableBase() {
 
   // 공산품 데이터
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useRecoilState(products);
 
   // 공산품 데이터 페이지네이션(다음 데이터가 있는지 확인)
-  const [nextPage, setNextPage] = useState('');
+  const [nextPage, setNextPage] = useRecoilState(page);
 
   // 공산품 데이터 검색시 키워드에 해당하는 데이터가 없을때
-  const [noDataImg, setNoDataImg] = useState(false);
+  const [noDataImg, setNoDataImg] = useRecoilState(if_no_data);
 
+  // form영역에서 키워드를 입력하고 검색버튼을 눌렀을시 쿼리데이터 가져오기
   const searchKeyWord = useRecoilValue(inputKeyWord);
   
   // 공산품 데이터 가져오기
@@ -50,6 +50,7 @@ export default function TableBase() {
     } else {
     // 기존데이터에 받은데이터를 추가(read more)
     setItems([...items, ...results]);
+    setNoDataImg(false);
     }
 
     // next로 오는 값이(url) --> 쿼리값만 추출
@@ -81,9 +82,7 @@ export default function TableBase() {
     <div id="table-data-area">
       <span id="dividing-line"></span>
       <TableBlock
-      items={items}
-      nextData={nextPage}
-      noDataImg={noDataImg}
+
       readMoreFunc={handleReadMore}
       readDetailFunc={readDetail}
       readHiddenFunc={readHidden}
