@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'search',
+    'users',
 ]
 
 # Pagination
@@ -88,6 +89,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'givenrat.wsgi.application'
 
+AUTH_USER_MODEL = 'users.User'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

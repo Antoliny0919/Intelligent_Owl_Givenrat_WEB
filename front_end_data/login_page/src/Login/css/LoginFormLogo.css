@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+#join-membership-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+  font-family: 'Gowun Dodum', sans-serif;
+}
+
+.join-membership-text {
+  color: #2D2D2D;
+}
+
+.join-membership-link {
+  text-decoration: none;
+  transition: all 0.7s;
+  color: white;
+}
+
+.join-membership-link:hover {
+  color: #E8A725;
+}
