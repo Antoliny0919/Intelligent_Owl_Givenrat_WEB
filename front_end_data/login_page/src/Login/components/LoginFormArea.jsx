@@ -3,11 +3,11 @@ import LoginFormMain from '../components/LoginFormMain';
 import '../css/LoginFormArea.css';
 
 
-export default function LoginFormArea({ loginLogoImg }) {
+export default function LoginFormArea({ loginLogoImg, inputText }) {
   return (
     <div id="login-form-area">
       <LoginFormLogo loginLogoImg={loginLogoImg}></LoginFormLogo>
-      <LoginFormMain></LoginFormMain>
+      <LoginFormMain inputText={inputText}></LoginFormMain>
     </div>
   )
 }

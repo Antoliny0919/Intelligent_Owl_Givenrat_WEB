@@ -1,0 +1,41 @@
+.input-area {
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.title-area {
+  font-size: 13px;
+  color: #1C4F17;
+  font-weight: 500;
+  margin-left: 0.1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 900;
+}
+
+
+
+.id-area {
+  display: block;
+  border: none;
+  border-bottom: 0.1rem solid #1C4F17;
+  height: 2.0rem;
+  width: 20.0rem;
+  font-size: 0.8rem;
+  background-color: #376F46;
+  transition: all 0.5s;
+}
+
+.id-area::placeholder {
+  color: #1C4F17;
+}
+
+.id-area:hover {
+  cursor: pointer;
+}
+
+.id-area:focus {
+  outline-width: 0;
+  border-bottom: 0.15rem solid #153B11;
+  font-weight: 900;
+}
