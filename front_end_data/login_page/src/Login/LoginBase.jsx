@@ -11,12 +11,14 @@ export default function LoginBase() {
         {
           titleName: '아이디',
           placeholderName: '아이디를 입력해주세요.',
+          inputType: 'text',
         }
       ],
       [
         {
           titleName: '비밀번호',
           placeholderName: '비밀번호를 입력해주세요.',
+          inputType: 'password',
         }
       ],
     ]
