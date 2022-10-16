@@ -3,6 +3,43 @@ from pyclbr import Function
 import openpyxl
 
 
+
+# def product_parsing(sheets_data: MutableSequence) -> MutableMapping:
+#   for index, data in enumerate(sheets_data):
+#     sheet_object, sheet_range, company_name = data
+    
+#     if index == 0:
+#       get_product_data = parse_data()
+    
+#     get_product_data(sheet_object, sheet_range, company_name)
+
+
+# def parse_data() -> Function:
+#   # 엑셀 시트당 원하는 데이터가 있는 셀의 위치를 파악
+#   total_data_cell = []
+  
+#   def get_product_data_cell(obj: openpyxl.Workbook, range: str, name: str):
+    
+#     for data in obj[range]:
+      
+#       for row in data:
+        
+#         if row == 
+    
+#     return
+
+#   return get_product_data_cell
+
+
+
+
+
+
+
+
+
+
+
 name_selector = ['상품명', '제품명', '품목', '품명', '품목명']
 
 # 브랜드가 상단에 위치하지 않을 수도 있음 (브랜드) 브랜드가 시트에 존재하기도 함 --> 시트부터 체크하는게 좋을듯(가장 간편)
@@ -36,31 +73,3 @@ attr_selector = ['상품정보', '식품설명', '함량', '성분', '원재료 
     , '제품 및 알러지유발성분', '주요성분', '제 품 주 요 성 분', '원재료 함량', '인증 및 특허', '주요 사항', '원재료명 및 함량', '함량 및 제원']
 
 code_num_selector = ['상품코드']
-
-
-
-def product_parsing(sheets_data: MutableSequence) -> MutableMapping:
-  for index, data in enumerate(sheets_data):
-    sheet_object, sheet_range, company_name = data
-    
-    if index == 0:
-      get_product_data = parse_data()
-    
-    get_product_data(sheet_object, sheet_range, company_name)
-
-
-def parse_data() -> Function:
-  # 엑셀 시트당 원하는 데이터가 있는 셀의 위치를 파악
-  total_data_cell = []
-  
-  def get_product_data_cell(obj: openpyxl.Workbook, range: str, name: str):
-    
-    for data in obj[range]:
-      
-      for row in data:
-        
-        if row == 
-    
-    return
-
-  return get_product_data_cell

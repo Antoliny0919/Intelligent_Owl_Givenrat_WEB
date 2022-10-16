@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+
 .input-area {
   display:flex;
   flex-direction: column;
@@ -7,7 +9,6 @@
 .title-area {
   font-size: 13px;
   color: #1C4F17;
-  font-weight: 500;
   margin-left: 0.1rem;
   margin-bottom: 0.3rem;
   font-weight: 900;
