@@ -5,7 +5,6 @@ from get_sheet_data.excel_parsing import sheet_parsing
 from get_sheet_data.monkey_patch import monkey_patch_openpyxl
 from get_product_data.product_parsing import product_parsing
 
-
 # 엑셀 파일들이 들어있는 디렉토리의 이름 / 경로
 EXCELS_DIR_NAME = 'excel_files'
 
@@ -23,5 +22,7 @@ if __name__ == "__main__":
   parse_sheet_data = sheet_parsing(excel_files_list, EXCELS_DIR_PATH)
   
   parse_product_data = product_parsing(parse_sheet_data)
+  for i in parse_product_data:
+    print(i)
   
   

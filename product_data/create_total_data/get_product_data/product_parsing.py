@@ -6,13 +6,17 @@ import get_product_data.selector.selector as selector_data
 
 
 def product_parsing(sheets_data: MutableSequence) -> MutableMapping:
+  total_data_cell = []
   for index, data in enumerate(sheets_data):
     sheet_object, sheet_range, company_name = data
     
     if index == 0:
       get_product_data = find_valid_range()
     
-    get_product_data(sheet_object, sheet_range, company_name)
+    total_data_cell.append(get_product_data(sheet_object, sheet_range, company_name))
+    
+  return total_data_cell
+
 
 
 def find_valid_range() -> Function:
@@ -27,9 +31,16 @@ def find_valid_range() -> Function:
     for row_data in obj[range]:  # tuple 객체안에 A1 ~ Z1 행 데이터가 담김
       
       for data in row_data:
-        # 시트값들을 순회하며 제품명이 담긴 셀 파악 --> 해당 행을 기억
-        if (str(data.value) in selector_data.name_selector):
+        # "제  품  명"처럼 글자 사이사이에 공백문자가 들어간 case가 많아서 공백정리
+        cell_data = str(data.value).replace(" ", "")
+        
+        # 시트값들을 순회하며 제품명이 담긴 행 데이터 selector_cell 인자로 전달
+        if (cell_data in selector_data.name_selector):
+          
           valid_range = find_position.selector_cell(row_data, name)
+          
+          return valid_range
+          
 
   return get_product_data_cell
 
@@ -63,10 +74,6 @@ def find_valid_range() -> Function:
 #       '자연웰', '사자표소스', '웰담', '싱싱플러스', '우리밀로', '천일식품', '루토사', '초록푸드', '급식대장', '지산푸드', '휴먼앤푸드', '쿠엔츠버킷', '제임스덕'\
 #         , '순수지기', '이가자연면', '돈지천', '초록나무', '빛고을청아']
 
-# size_selector = ['규격', '단위', '포장규격', '중량', '규격 등', '포장규격', '제품규격', '용량']
-
-# price_selector = ['학교가', '행사가', '단가', '규격단가', '봉단가', '가격', '정상가', '학교공급가', '공급가', '규격가', '봉당단가', '개당단가', '개당가격', '일반단가'\
-#   , '봉당', '규격가', '정상가', '할인단가', '학교단가', '공급가격', '학교납품가']
 
 # attr_selector = ['상품정보', '식품설명', '함량', '성분', '원재료 및 함량', '성분 및 함량', '비고', '비고란', '제품특징 및 원재료함량', '제품 특이사항'\
 #   , '제품성분', '주요성분', '제품함량', '성분 및 특징', '성분 및 특이사항', '세부품명', '특징', '제품함량&특이사항', '특이사항', '개당중량', '성분표시', '성분 함량, 알러지'\

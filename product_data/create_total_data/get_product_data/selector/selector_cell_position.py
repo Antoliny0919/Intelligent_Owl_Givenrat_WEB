@@ -1,5 +1,17 @@
 from collections.abc import MutableSequence
-import get_product_data.selector.selector as selector_data
+import openpyxl
+import get_product_data.selector.selector as selectors
+
+def set_data(data: openpyxl):
+  """
+    셀 데이터의 __str__값에서 엑셀 행열위치를 추출
+    해당 행열위치 데이터만 리턴
+  """
+  cell_data = str(data)
+  find_position = cell_data.find(".")
+  row_column_position = cell_data[find_position+1:-1]
+  return row_column_position
+
 
 def selector_cell(row_data: MutableSequence, name: str):
   """
@@ -12,7 +24,7 @@ def selector_cell(row_data: MutableSequence, name: str):
     "메인브랜드": "",
     "서브브랜드": "",
     "규격": "",
-    "가격": "",
+    "가격": [],
     "속성":"",
   }
   # big_brand --> 씨제이, 청정원, 오뚜기는 서브브랜드 X
@@ -20,5 +32,19 @@ def selector_cell(row_data: MutableSequence, name: str):
   valid_cell_position["메인브랜드"] = name
     
   for data in row_data:
-    if (str(data.value) in selector_data.name_selector):
-      print(data, data.value)
+    str_data = str(data.value).replace(" ","").replace("\n","")
+    
+    if (str_data in selectors.name_selector):
+      valid_cell_position["품명"] = set_data(data)
+      
+    elif (str_data in selectors.size_selector):
+      valid_cell_position["규격"] = set_data(data)
+    
+    elif (str_data in selectors.price_selector):
+      valid_cell_position["가격"].append(set_data(data))
+      
+    elif (str_data in selectors.attr_selector):
+      valid_cell_position["속성"] = set_data(data)
+  
+  return valid_cell_position
+  
