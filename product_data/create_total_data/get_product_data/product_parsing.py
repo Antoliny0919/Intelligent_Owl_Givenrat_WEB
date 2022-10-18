@@ -1,35 +1,37 @@
+import openpyxl
 from collections.abc import MutableSequence, MutableMapping
 from pyclbr import Function
-import openpyxl
+import get_product_data.selector.selector_cell_position as find_position
+import get_product_data.selector.selector as selector_data
 
 
-
-# def product_parsing(sheets_data: MutableSequence) -> MutableMapping:
-#   for index, data in enumerate(sheets_data):
-#     sheet_object, sheet_range, company_name = data
+def product_parsing(sheets_data: MutableSequence) -> MutableMapping:
+  for index, data in enumerate(sheets_data):
+    sheet_object, sheet_range, company_name = data
     
-#     if index == 0:
-#       get_product_data = parse_data()
+    if index == 0:
+      get_product_data = find_valid_range()
     
-#     get_product_data(sheet_object, sheet_range, company_name)
+    get_product_data(sheet_object, sheet_range, company_name)
 
 
-# def parse_data() -> Function:
-#   # 엑셀 시트당 원하는 데이터가 있는 셀의 위치를 파악
-#   total_data_cell = []
+def find_valid_range() -> Function:
+  """
+  엑셀 시트당 원하는 데이터가 있는 셀의 위치를 파악
+  """
   
-#   def get_product_data_cell(obj: openpyxl.Workbook, range: str, name: str):
+  total_data_cell = []
+  
+  def get_product_data_cell(obj: openpyxl.Workbook, range: str, name: str):
     
-#     for data in obj[range]:
+    for row_data in obj[range]:  # tuple 객체안에 A1 ~ Z1 행 데이터가 담김
       
-#       for row in data:
-        
-#         if row == 
-    
-#     return
+      for data in row_data:
+        # 시트값들을 순회하며 제품명이 담긴 셀 파악 --> 해당 행을 기억
+        if (str(data.value) in selector_data.name_selector):
+          valid_range = find_position.selector_cell(row_data, name)
 
-#   return get_product_data_cell
-
+  return get_product_data_cell
 
 
 
@@ -39,8 +41,6 @@ import openpyxl
 
 
 
-
-name_selector = ['상품명', '제품명', '품목', '품명', '품목명']
 
 # 브랜드가 상단에 위치하지 않을 수도 있음 (브랜드) 브랜드가 시트에 존재하기도 함 --> 시트부터 체크하는게 좋을듯(가장 간편)
 # 브랜드 통합인 회사도 있음 --> 브랜드명이 없어도됨 --> 동원, cj, 청정원
@@ -56,20 +56,20 @@ name_selector = ['상품명', '제품명', '품목', '품명', '품목명']
 # 유림에프에스 순수지기 불가능
 # 유림에프에스 스마일푸드 불가능
 # 용봉 백미담 불가능(엑셀 파일이 안열림)
-brand_selector = ['허쉬', '요리와유', '소예푸드', '코주부', '문옥례', '산들맘', '굿브랜드스쿨', '아라원', '판다스토리', '들녘식품', '화과방', '주원' \
-  '시원스쿨FOOD', 'MINIKER', '오 뗄', '마이디벨', '사세', '푸드스토리', '올바른', '한국전통식품', '착한애', '가보팜스', '명가푸드', '목우촌', '바다한줌'\
-    '노고치농원', '천지해', '신미유부', 'SRC', '마리요리', '라망피자', '도담푸드', '또앤또', '코끼리푸드', '맛본오란다', '재호물산', '맥케인', '참앤참떡' \
-      '매일유업', '삼립샤니', '던킨도너츠', '해두른어묵', '해오름', '에이치쿡', '씨엔에스푸드', '올그루만두', '보리가득', '이룸리테일', '푸딩스쿨', '굿프렌즈', 
-      '자연웰', '사자표소스', '웰담', '싱싱플러스', '우리밀로', '천일식품', '루토사', '초록푸드', '급식대장', '지산푸드', '휴먼앤푸드', '쿠엔츠버킷', '제임스덕'\
-        , '순수지기', '이가자연면', '돈지천', '초록나무', '빛고을청아']
+# brand_selector = ['허쉬', '요리와유', '소예푸드', '코주부', '문옥례', '산들맘', '굿브랜드스쿨', '아라원', '판다스토리', '들녘식품', '화과방', '주원' \
+#   '시원스쿨FOOD', 'MINIKER', '오 뗄', '마이디벨', '사세', '푸드스토리', '올바른', '한국전통식품', '착한애', '가보팜스', '명가푸드', '목우촌', '바다한줌'\
+#     '노고치농원', '천지해', '신미유부', 'SRC', '마리요리', '라망피자', '도담푸드', '또앤또', '코끼리푸드', '맛본오란다', '재호물산', '맥케인', '참앤참떡' \
+#       '매일유업', '삼립샤니', '던킨도너츠', '해두른어묵', '해오름', '에이치쿡', '씨엔에스푸드', '올그루만두', '보리가득', '이룸리테일', '푸딩스쿨', '굿프렌즈', 
+#       '자연웰', '사자표소스', '웰담', '싱싱플러스', '우리밀로', '천일식품', '루토사', '초록푸드', '급식대장', '지산푸드', '휴먼앤푸드', '쿠엔츠버킷', '제임스덕'\
+#         , '순수지기', '이가자연면', '돈지천', '초록나무', '빛고을청아']
 
-size_selector = ['규격', '단위', '포장규격', '중량', '규격 등', '포장규격', '제품규격', '용량']
+# size_selector = ['규격', '단위', '포장규격', '중량', '규격 등', '포장규격', '제품규격', '용량']
 
-price_selector = ['학교가', '행사가', '단가', '규격단가', '봉단가', '가격', '정상가', '학교공급가', '공급가', '규격가', '봉당단가', '개당단가', '개당가격', '일반단가'\
-  , '봉당', '규격가', '정상가', '할인단가', '학교단가', '공급가격', '학교납품가']
+# price_selector = ['학교가', '행사가', '단가', '규격단가', '봉단가', '가격', '정상가', '학교공급가', '공급가', '규격가', '봉당단가', '개당단가', '개당가격', '일반단가'\
+#   , '봉당', '규격가', '정상가', '할인단가', '학교단가', '공급가격', '학교납품가']
 
-attr_selector = ['상품정보', '식품설명', '함량', '성분', '원재료 및 함량', '성분 및 함량', '비고', '비고란', '제품특징 및 원재료함량', '제품 특이사항'\
-  , '제품성분', '주요성분', '제품함량', '성분 및 특징', '성분 및 특이사항', '세부품명', '특징', '제품함량&특이사항', '특이사항', '개당중량', '성분표시', '성분 함량, 알러지'\
-    , '제품 및 알러지유발성분', '주요성분', '제 품 주 요 성 분', '원재료 함량', '인증 및 특허', '주요 사항', '원재료명 및 함량', '함량 및 제원']
+# attr_selector = ['상품정보', '식품설명', '함량', '성분', '원재료 및 함량', '성분 및 함량', '비고', '비고란', '제품특징 및 원재료함량', '제품 특이사항'\
+#   , '제품성분', '주요성분', '제품함량', '성분 및 특징', '성분 및 특이사항', '세부품명', '특징', '제품함량&특이사항', '특이사항', '개당중량', '성분표시', '성분 함량, 알러지'\
+#     , '제품 및 알러지유발성분', '주요성분', '제 품 주 요 성 분', '원재료 함량', '인증 및 특허', '주요 사항', '원재료명 및 함량', '함량 및 제원']
 
-code_num_selector = ['상품코드']
+# code_num_selector = ['상품코드']
