@@ -5,44 +5,44 @@ import get_product_data.selector.selector_cell_position as find_position
 import get_product_data.selector.selector as selector_data
 
 
-def product_parsing(sheets_data: MutableSequence) -> MutableMapping:
+def valid_cell_parsing(sheets_data: MutableSequence) -> MutableSequence:
+  """
+  parameter: sheets_data --> (sheet_object, sheet_range, company_name)
+  sheets_data를 언패킹하여 해당 시트객체의 범위에서 유효한 셀 위치를 찾기 위해
+  find_valid_range함수 매개변수로 전달
+  """
   total_data_cell = []
-  for index, data in enumerate(sheets_data):
+  
+  for data in sheets_data:
     sheet_object, sheet_range, company_name = data
-    
-    if index == 0:
-      get_product_data = find_valid_range()
-    
-    total_data_cell.append(get_product_data(sheet_object, sheet_range, company_name))
+    total_data_cell.append(find_valid_range(sheet_object, sheet_range, company_name))
     
   return total_data_cell
 
 
 
-def find_valid_range() -> Function:
-  """
-  엑셀 시트당 원하는 데이터가 있는 셀의 위치를 파악
-  """
-  
-  total_data_cell = []
-  
-  def get_product_data_cell(obj: openpyxl.Workbook, range: str, name: str):
-    
-    for row_data in obj[range]:  # tuple 객체안에 A1 ~ Z1 행 데이터가 담김
-      
-      for data in row_data:
-        # "제  품  명"처럼 글자 사이사이에 공백문자가 들어간 case가 많아서 공백정리
-        cell_data = str(data.value).replace(" ", "")
-        
-        # 시트값들을 순회하며 제품명이 담긴 행 데이터 selector_cell 인자로 전달
-        if (cell_data in selector_data.name_selector):
-          
-          valid_range = find_position.selector_cell(row_data, name)
-          
-          return valid_range
-          
 
-  return get_product_data_cell
+  
+def find_valid_range(obj: openpyxl.Workbook, range: str, name: str) -> MutableMapping:
+  """
+  유효한 셀 위치를 파악하는 함수
+  유효범위를 순회하면서 사용자가 원하는 키워드에 맞는 셀 위치를 파악
+  return: MutableMapping형 {키워드: 셀 위치}
+  """
+  
+  for row_data in obj[range]:  # tuple 객체안에 A1 ~ Z1 행 데이터가 담김
+    
+    for data in row_data:
+      # "제  품  명"처럼 글자 사이사이에 공백문자가 들어간 case가 많아서 공백정리
+      cell_data = str(data.value).replace(" ", "")
+      
+      # 시트값들을 순회하며 제품명이 담긴 행 데이터 selector_cell 인자로 전달
+      if (cell_data in selector_data.name_selector):
+        
+        valid_range = find_position.selector_cell(row_data, name)
+        if(valid_range == False):
+          break
+        return valid_range
 
 
 

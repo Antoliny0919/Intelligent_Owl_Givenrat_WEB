@@ -46,5 +46,9 @@ def selector_cell(row_data: MutableSequence, name: str):
     elif (str_data in selectors.attr_selector):
       valid_cell_position["속성"] = set_data(data)
   
+  # 유효한 행 데이터가 아닐시(valid_cell_position데이터가 불충분)
+  if (valid_cell_position["가격"] == []):
+    return False
+  
   return valid_cell_position
   
