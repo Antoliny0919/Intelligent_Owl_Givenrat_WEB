@@ -35,24 +35,19 @@ def selector_cell(row_data: MutableSequence, name: str):
     "속성":"",
   }
   # big_brand --> 씨제이, 청정원, 오뚜기는 서브브랜드 X
-
   valid_cell_position["메인브랜드"] = name
-    
+  
+  # 셀 데이터와 사용자가 설정한 데이터가(selectors)맞으면 해당 셀의 위치를 valid_cell_position에 저장
   for data in row_data:
     str_data = str(data.value).replace(" ","").replace("\n","")
-    # print(data, str_data, type(data))
-    if (str_data in selectors.name_selector):
-      valid_cell_position["품명"] = set_data(data)
-      
-    elif (str_data in selectors.size_selector):
-      valid_cell_position["규격"] = set_data(data)
-    
-    elif (str_data in selectors.price_selector):
-      valid_cell_position["가격"].append(set_data(data))
-      
-    elif (str_data in selectors.attr_selector):
-      valid_cell_position["속성"] = set_data(data)
-    
+    for key, value in selectors.selectors.items():
+      if (str_data in value):
+        if (key == "가격"):
+          valid_cell_position[key].append(set_data(data))
+          break
+        valid_cell_position[key] = set_data(data)
+        break
+
   # 유효한 행 데이터가 아닐시(valid_cell_position데이터가 불충분)
   if (valid_cell_position["가격"] == []):
     return False
