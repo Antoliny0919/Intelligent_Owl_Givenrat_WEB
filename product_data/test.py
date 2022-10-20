@@ -12,6 +12,4 @@ selectors = {
   $주요사항$원재료명및함량$함량및제원",
 }
 
-for key, value in selectors.items():
-  print(key)
-  print(value)
+

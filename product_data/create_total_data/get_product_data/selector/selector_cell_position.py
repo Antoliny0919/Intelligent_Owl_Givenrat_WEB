@@ -27,7 +27,7 @@ def selector_cell(row_data: MutableSequence, name: str):
   expressions = re.compile(r'[\w]')
   valid_cell_position = {
     "코드번호": "",
-    "품명": "",
+    "품명": [],
     "메인브랜드": "",
     "서브브랜드": "",
     "규격": "",
@@ -40,12 +40,19 @@ def selector_cell(row_data: MutableSequence, name: str):
   # 셀 데이터와 사용자가 설정한 데이터가(selectors)맞으면 해당 셀의 위치를 valid_cell_position에 저장
   for data in row_data:
     str_data = str(data.value).replace(" ","").replace("\n","")
+    print(data, data.__class__.__name__, str_data)
+
     for key, value in selectors.selectors.items():
       if (str_data in value):
-        if (key == "가격"):
+        if (key == "품명" or key == "가격"):
           valid_cell_position[key].append(set_data(data))
           break
         valid_cell_position[key] = set_data(data)
+        break
+      
+      # 품명같은 경우 합쳐진 셀들또한 유효한 값이 될 수 있음
+      elif (data.__class__.__name__ == "MergedCell"):
+        valid_cell_position["품명"].append(set_data(data))
         break
 
   # 유효한 행 데이터가 아닐시(valid_cell_position데이터가 불충분)
@@ -54,7 +61,7 @@ def selector_cell(row_data: MutableSequence, name: str):
   
   # cj, 오뚜기, 청정원 --> 상품코드가 존재(품명 왼쪽셀)
   if (name == 'cjfreshway' or name == '오뚜기' or name == 'daesang'):
-    column, row = expressions.findall(valid_cell_position["품명"])
+    column, row = expressions.findall(valid_cell_position["품명"][0])
     codenum_column = chr(ord(column) - 1)
     valid_cell_position["코드번호"] = codenum_column + row
     
