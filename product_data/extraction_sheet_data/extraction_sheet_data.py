@@ -1,11 +1,11 @@
 import openpyxl
 import re
 from collections.abc import MutableSequence, MutableMapping
-import get_product_data.selector.selector_cell_position as find_position
-import get_product_data.selector.selector as selector_data
+from .cell_selector.selector_cell_position import selector_match_cell
+from .cell_selector.selector import name_selector
 
 
-def valid_cell_parsing(sheets_data: MutableSequence) -> MutableSequence:
+def valid_cell_extraction(sheets_data: MutableSequence) -> MutableSequence:
   """
   parameter: sheets_data --> (sheet_object, sheet_range, company_name)
   sheets_data를 언패킹하여 해당 시트객체의 범위에서 유효한 셀 위치를 찾기 위해
@@ -27,7 +27,6 @@ def find_valid_range(obj: openpyxl.Workbook, range: str, name: str) -> MutableMa
   """
   유효한 셀 위치를 파악하는 함수
   유효범위를 순회하면서 사용자가 원하는 키워드에 맞는 셀 위치를 파악
-  return: MutableMapping형 {키워드: 셀 위치}
   """
   find_max_row = re.compile(r'[\d]')
   for row_data in obj[range]:  # tuple 객체안에 A1 ~ Z1 행 데이터가 담김
@@ -37,9 +36,9 @@ def find_valid_range(obj: openpyxl.Workbook, range: str, name: str) -> MutableMa
       cell_data = str(data.value).replace(" ", "")
       
       # 시트값들을 순회하며 제품명이 담긴 행 데이터 selector_cell 인자로 전달
-      if (cell_data in selector_data.name_selector):        
+      if (cell_data in name_selector):        
         max_row = "".join(find_max_row.findall(range)[1:])
-        valid_range = find_position.selector_cell(row_data, name, max_row)
+        valid_range = selector_match_cell(row_data, name, max_row)
         
         if(valid_range == False):
           break

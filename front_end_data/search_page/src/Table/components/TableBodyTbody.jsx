@@ -6,7 +6,7 @@ import '../css/TableBodyTbody.css';
 
 export default function TableBodyTbody({ readDetailFunc, readHiddenFunc }) {
   const items = useRecoilValue(products)
-  const noDataImg = useRecoilValue(if_no_data)
+  const ifNoData = useRecoilValue(if_no_data)
   return (
     <tbody>
       {items.map((item) => {
@@ -20,7 +20,7 @@ export default function TableBodyTbody({ readDetailFunc, readHiddenFunc }) {
         </tr>)
       })}
       {/* 검색했는데 데이터가 하나도 없을때 이미지 */}
-      {noDataImg && <tr><td>이시현 입니다!</td></tr>}
+      {ifNoData && <tr><td><div id='no-data-keyword'></div></td></tr>}
     </tbody>
   )
 }

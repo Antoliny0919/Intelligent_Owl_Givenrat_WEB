@@ -6,7 +6,7 @@ import TableBlock from './components/TableBlock';
 import './css/TableBase.css';
 
 
-const PRODUCTSCOUNT = 28
+const PRODUCTSCOUNT = 11
 
 export default function TableBase() {
 
@@ -82,7 +82,6 @@ export default function TableBase() {
     <div id="table-data-area">
       <span id="dividing-line"></span>
       <TableBlock
-
       readMoreFunc={handleReadMore}
       readDetailFunc={readDetail}
       readHiddenFunc={readHidden}

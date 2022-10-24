@@ -1,6 +1,6 @@
 from collections.abc import MutableSequence, MutableMapping
 import openpyxl
-import get_product_data.selector.selector as selectors
+from .selector import selectors
 import re
 
 
@@ -17,7 +17,7 @@ def set_data(data: openpyxl) -> str:
   return row_column_position
 
 
-def selector_cell(row_data: MutableSequence, name: str, max_row: str) -> MutableMapping:
+def selector_match_cell(row_data: MutableSequence, name: str, max_row: str) -> MutableMapping:
   
   """
   유효한 행 데이터를 받아 순회하여
@@ -46,7 +46,7 @@ def selector_cell(row_data: MutableSequence, name: str, max_row: str) -> Mutable
   for data in row_data:
     str_data = str(data.value).replace(" ","").replace("\n","")
 
-    for key, value in selectors.selectors.items():
+    for key, value in selectors.items():
       if (str_data in value):
         if (key == "name" or key == "price"):
           valid_cell_position[key].append(set_data(data))
@@ -65,8 +65,8 @@ def selector_cell(row_data: MutableSequence, name: str, max_row: str) -> Mutable
   
   # cj, 오뚜기, 청정원 --> 상품코드가 존재(품명 왼쪽셀)
   if (name == 'cjfreshway' or name == '오뚜기' or name == 'daesang'):
-    column, row = expressions.findall(valid_cell_position["name"][0])
-    codenum_column = chr(ord(column) - 1)
+    col, row = expressions.findall(valid_cell_position["name"][0])
+    codenum_column = chr(ord(col) - 1)
     valid_cell_position["code_num"] = codenum_column + row
     
     

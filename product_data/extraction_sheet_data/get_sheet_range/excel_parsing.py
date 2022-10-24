@@ -6,7 +6,7 @@ from .get_excel_sheets_object import get_sheet_data
 from collections.abc import MutableSequence
 
 
-def sheet_parsing(files_list: MutableSequence, path: str) -> MutableSequence:
+def sheet_extraction(files_list: MutableSequence, path: str) -> MutableSequence:
   for index, name in enumerate(files_list):
     
     # 엑셀파일 경로

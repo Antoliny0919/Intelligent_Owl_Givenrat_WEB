@@ -4,14 +4,14 @@ import TableBodyThead from './TableBodyThead';
 import TableBodyTbody from './TableBodyTbody';
 import '../css/TableBody.css';
 
-export default function TableBody({ readMoreFunc, readDetailFunc, readHiddenFunc }) {
+export default function TableBody({ readMoreFunc, readDetailFunc, readHiddenFunc}) {
   const nextPage = useRecoilValue(page);
 
   return (
     <div id="table-body-area">
       <table id="table-body">
         <TableBodyThead></TableBodyThead>
-        <TableBodyTbody 
+        <TableBodyTbody
         readDetailFunc={readDetailFunc}
         readHiddenFunc={readHiddenFunc}
         >

@@ -17,3 +17,9 @@
   cursor: pointer;
   background-color: #DFB751;
 }
+
+#no-data-keyword {
+  background-image: url('../img/no_data_img.png');
+  background-repeat: no-repeat;
+  height: 30rem;
+}
