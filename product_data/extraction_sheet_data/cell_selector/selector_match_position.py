@@ -17,7 +17,7 @@ def set_data(data: openpyxl) -> str:
   return row_column_position
 
 
-def selector_match_cell(row_data: MutableSequence, name: str, max_row: str) -> MutableMapping:
+def selector_match_cell(obj:openpyxl.Workbook, row_data: MutableSequence, name: str, max_row: str) -> MutableMapping:
   
   """
   유효한 행 데이터를 받아 순회하여
@@ -28,17 +28,19 @@ def selector_match_cell(row_data: MutableSequence, name: str, max_row: str) -> M
   
   # 데이터 형식
   valid_cell_position = {
-    "code_num": "",
+    "sheet_obj": None,
+    "code_num": None,
     "name": [],
-    "main_brand": "",
-    "sub_brand": "",
-    "size": "",
+    "main_brand": None,
+    "sub_brand": None,
+    "size": None,
     "price": [],
-    "attribute":"",
-    "max_row": "",
+    "attribute": None,
+    "max_row": None,
   }
   
   # big_brand --> 씨제이, 청정원, 오뚜기는 서브브랜드 X
+  valid_cell_position["sheet_obj"] = obj
   valid_cell_position["main_brand"] = name
   valid_cell_position["max_row"] = max_row
   
