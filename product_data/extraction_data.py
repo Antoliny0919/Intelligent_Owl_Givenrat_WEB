@@ -25,7 +25,7 @@ if __name__ == "__main__":
   sheets_data = valid_cell_extraction(excels_data)
   
   for i in sheets_data:
-    print(i)
+    print(repr(i))
   
   # parse_sheets_data를 기반으로 공산품 데이터 파싱
   # products_data = get_product_data(sheets_data)
