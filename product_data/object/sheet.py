@@ -12,10 +12,12 @@ class Sheet():
     self._max_row = max_row
     self._start_row = None
     self._sub_brand = None
-    self.valid_name_col = []
+    self.valid_name_col = None
     self.valid_price_col = []
     self.valid_attr_col = None
+    self.valid_size_col = None
     self.valid_codenum_col = None
+    self.merged_cell_checker = None
 
 
   def __str__(self) -> str:
@@ -25,7 +27,7 @@ class Sheet():
   
   def __repr__(self) -> str:
     return f'sheet_obj : {self._sheet_obj}\nmain_brand : {self._main_brand}\nsub_brand : {self._sub_brand}\n\
-start_row : {self._start_row}\nmax_row : {self._max_row}\nname_col : {self.valid_name_col}\n\
+start_row : {self._start_row}\nmax_row : {self._max_row}\nname_col : {self.valid_name_col}\nsize_col : {self.valid_size_col}\n\
 price_col : {self.valid_price_col}\nattr_col : {self.valid_attr_col}\ncodenum_col : {self.valid_codenum_col}\n\n'
   
   

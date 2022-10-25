@@ -1,7 +1,7 @@
 import re
 import openpyxl
 from collections.abc import MutableSequence
-from .selector import selectors
+from .selector import selectors, big_brand
 from object.sheet import Sheet
 
 
@@ -25,7 +25,6 @@ def selector_match_cell(obj:openpyxl.Workbook, row_data: MutableSequence, main_b
   유효한 행 데이터를 받아 순회하여
   선택자에 맞는 셀 데이터의 위치를 파악
   """
-  # find_max_row = re.compile(r'[\w]')
   find_start_row = re.compile(r'[\d]')
   
   sheet_data = Sheet(obj, main_brand_name, int(max_row))
@@ -40,17 +39,21 @@ def selector_match_cell(obj:openpyxl.Workbook, row_data: MutableSequence, main_b
     str_data = str(data.value).replace(" ","").replace("\n","")
 
     for key, value in selectors.items():
+      
       if (str_data in value):
         key_access = key.replace("selector", "col")
-        if (key == "valid_name_selector" or key == "valid_price_selector"):
+        sheet_data.merged_cell_checker = key_access
+        if (key == "valid_price_selector"):
           sheet_data.__dict__[key_access].append(set_data(data))
           break
+        
         sheet_data.__dict__[key_access] = set_data(data)
         break
       
       # 품명같은 경우 합쳐진 셀들또한 유효한 값이 될 수 있음
       elif (data.__class__.__name__ == "MergedCell"):
-        sheet_data.__dict__["valid_name_col"].append(set_data(data))
+        if (sheet_data.valid_name_col is not None):
+          sheet_data.__dict__[sheet_data.merged_cell_checker] = set_data(data)
         break
 
   # 유효한 행 데이터가 아닐시(valid_cell_position데이터가 불충분)
@@ -58,7 +61,7 @@ def selector_match_cell(obj:openpyxl.Workbook, row_data: MutableSequence, main_b
     return False
   
   # cj, 오뚜기, 청정원 --> 상품코드가 존재(품명 왼쪽셀)
-  if (main_brand_name == 'cjfreshway' or main_brand_name == '오뚜기' or main_brand_name == 'daesang'):
+  if (main_brand_name in big_brand):
     col = sheet_data.valid_name_col[0]
     codenum_col = chr(ord(col) - 1)
     sheet_data.valid_codenum_col = codenum_col
