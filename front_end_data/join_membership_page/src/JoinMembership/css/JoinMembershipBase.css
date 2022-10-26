@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#join-membership-page-layout-container {
+  background-color: #376F46;
+}
+
+#sizing-block {
+  position: relative;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  min-height: 100vh;
+}
