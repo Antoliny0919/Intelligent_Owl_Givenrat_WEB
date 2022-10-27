@@ -55,6 +55,9 @@ def selector_match_cell(obj:openpyxl.Workbook, row_data: MutableSequence, main_b
         if (sheet_data.valid_name_col is not None):
           sheet_data.__dict__[sheet_data.merged_cell_checker] = set_data(data)
         break
+        
+      else:
+        sheet_data.merged_cell_checker = None
 
   # 유효한 행 데이터가 아닐시(valid_cell_position데이터가 불충분)
   if (sheet_data.valid_price_col == []):

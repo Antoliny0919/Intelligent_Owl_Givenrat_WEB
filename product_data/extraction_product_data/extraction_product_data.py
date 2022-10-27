@@ -1,11 +1,23 @@
-from collections.abc import MutableSequence, MutableMapping
+from collections.abc import MutableSequence
+from object.products_data import product_data_set
+from object.sheet import Sheet
 
 
-def extraction_product_data(sheet: MutableMapping):
-  obj = sheet["sheet_obj"]
-  for i in range(sheet["start_row"], sheet["max_row"]+1):
-    obj[sheet["code_num"]]
+def extraction_product_data(sheet: Sheet):
+  product_data_set["brand"] = sheet._main_brand
   
+  for row in sheet.valid_range():
+    product_data = product_data_set
+    for i in sheet.valid_price_col:
+      print(sheet.search_cell_value(i, row))
+    # sheet[sheet.valid_name_col+str(cell)]
+    # for key, value in sheet.valid_keywords().items():
+    #   if (isinstance(value, MutableSequence)):
+    #     for item in value:
+    #       print(sheet.search_cell_value(item, row))
+    #       product_data[key] = str(sheet.search_cell_value(item, row))
+    #   product_data[key] = sheet.search_cell_value(value, row)
+
   return 
 
 

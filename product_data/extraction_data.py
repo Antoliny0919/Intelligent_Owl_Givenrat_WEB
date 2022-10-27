@@ -24,11 +24,11 @@ if __name__ == "__main__":
   # 각 시트마다 데이터 추출을 시작할 셀 위치와 해당 시트의 특성을 담은(브랜드, 마지막행숫자) 리스트 반환
   sheets_data = valid_cell_extraction(excels_data)
   
-  for i in sheets_data:
-    print(repr(i))
+  # for i in sheets_data:
+  #   print(repr(i))
   
   # parse_sheets_data를 기반으로 공산품 데이터 파싱
-  # products_data = get_product_data(sheets_data)
+  products_data = get_product_data(sheets_data)
   
 
 
