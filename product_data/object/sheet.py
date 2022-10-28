@@ -46,11 +46,10 @@ price_col : {self.valid_price_col}\nattr_col : {self.valid_attr_col}\ncodenum_co
     """
     행, 열 값을 매개변수로 받아 해당 엑셀 시트의 셀값을 반환
     """
-    try:
-      data = self[col+str(row)].value
-    except AttributeError:
-      return
-    return data
+
+    return self[col+str(row)].value
+
+
   
   
   def valid_keywords(self):

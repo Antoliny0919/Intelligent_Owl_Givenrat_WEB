@@ -44,7 +44,7 @@ def selector_match_cell(obj:openpyxl.Workbook, row_data: MutableSequence, main_b
         key_access = key.replace("selector", "col")
         sheet_data.merged_cell_checker = key_access
         if (key == "valid_price_selector"):
-          sheet_data.__dict__[key_access].append(set_data(data))
+          sheet_data.__dict__[key_access].append((str_data, set_data(data)))
           break
         
         sheet_data.__dict__[key_access] = set_data(data)
