@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import JoinMembershipBase from './JoinMembership/JoinMembershipBase';
@@ -7,7 +8,9 @@ import JoinMembershipBase from './JoinMembership/JoinMembershipBase';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <JoinMembershipBase></JoinMembershipBase>
+    <RecoilRoot>
+      <JoinMembershipBase></JoinMembershipBase>
+    </RecoilRoot>
   </React.StrictMode>
 );
 

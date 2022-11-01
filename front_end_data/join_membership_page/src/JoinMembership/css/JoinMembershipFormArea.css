@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+
 #join-membership-form-area {
   display: flex;
-  width: 30%;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
+  flex-direction: column;
+  font-family: 'Gowun Dodum', sans-serif;
 }
