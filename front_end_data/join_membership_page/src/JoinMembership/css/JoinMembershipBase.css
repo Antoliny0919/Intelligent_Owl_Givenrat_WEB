@@ -18,9 +18,10 @@
 
 #join-membership-content-area {
   display: flex;
-  width: 60%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
   flex-direction: row;
+  justify-content: center;
 }

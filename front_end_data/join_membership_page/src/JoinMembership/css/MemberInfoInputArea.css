@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+}
+
+.input-area {
+  height: 50px;
+  width: 300px;
+  padding: 7px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: solid #164C16 2px;
+  background-color: #1C631C;
+  outline: none;
+}
+
+
+.input-area:hover {
+  cursor: pointer;
+}
+
+.input-area::placeholder {
+  color: #103310;
+  font-weight: 900;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.input-area:focus {
+  outline-width: 0;
+  border: solid #134013 2px;
+}

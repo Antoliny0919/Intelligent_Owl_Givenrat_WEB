@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
+.duplication-check-area {
+  margin-left: 20px;
+  position: relative;
+}
+
+.check-button {
+  position: inherit;
+  height: 50px;
+  width: 100px;
+  padding: 7px 10px;
+  font-size: 14px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 600;
+  border-radius: 5px;
+  border: solid #8D981E 2px;
+  color: #8D981E;
+  background-color: #1D5213;
+  outline-width: 0;
+  box-shadow: rgba(19, 78, 11, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.check-button:hover {
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  top: 0.1rem;
+}
+
+
