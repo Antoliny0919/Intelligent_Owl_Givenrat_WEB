@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
+
 .input-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   font-size: 16px;
@@ -32,4 +34,26 @@
 .input-area:focus {
   outline-width: 0;
   border: solid #134013 2px;
+}
+
+#address-page {
+  position: inherit;
+  height: 50px;
+  width: 350px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: solid #8D981E 2px;
+  color: #8D981E;
+  background-color: #1D5213;
+  outline-width: 0;
+  box-shadow: rgba(19, 78, 11, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  font-size: 14px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 600;
+}
+
+#address-page:hover {
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  top: 0.1rem;
 }

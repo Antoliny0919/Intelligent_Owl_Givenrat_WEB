@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
 import { state } from '../../Atom';
 
@@ -36,23 +36,22 @@ export default function FormBlock() {
     }
   }
 
-  // http://localhost:3000/AddressPage.js
-
 
   return (
-    <Fragment>
       <div className='form-block-container'>
         {inputData.form_section.map(({ keyWord, placeholder, inputType, Duplication, attentionBlock }) => {
             return (
               <div className='member-data-input-area'>
                 <InputKeyWordArea keyWord={keyWord} attentionBlock={attentionBlock}></InputKeyWordArea>
-                <MemberInfoInputArea placeholder={placeholder} inputType={inputType}></MemberInfoInputArea>
+                <MemberInfoInputArea 
+                placeholder={placeholder} 
+                inputType={inputType}
+                openAddressPage={openAddressPage}
+                ></MemberInfoInputArea>
                 {Duplication && <DuplicationCheckArea></DuplicationCheckArea>}
               </div>
               )
           })}
       </div>
-      <button onClick={openAddressPage}></button>
-    </Fragment>
   )
 }

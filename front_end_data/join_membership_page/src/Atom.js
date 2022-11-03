@@ -46,6 +46,13 @@ export const state = atom({
         inputType: 'text',
         Duplication: false,
         attentionBlock: true,
+      },
+      {
+        keyWord: '주소',
+        placeholder: false,
+        inputType: 'button',
+        Duplication: false,
+        attentionBlock: true,
       }
     ]
   }
