@@ -1,7 +1,10 @@
 import '../css/InputKeyWordArea.css';
 
-export default function InputKeyWordArea() {
+export default function InputKeyWordArea({ keyWord, attentionBlock }) {
   return (
-    <label className="input-key-word">아이디<span className='attention-marker'>*</span></label>
+    <div className='keyword-area'>
+      <label className="input-key-word">{keyWord}</label>
+      {attentionBlock && <span className='attention-marker'>*</span>}
+    </div>
   )
 }

@@ -4,11 +4,12 @@
   display: flex;
   flex-direction: row;
   font-size: 16px;
+  margin-left: 20px;
 }
 
 .input-area {
   height: 50px;
-  width: 300px;
+  width: 350px;
   padding: 7px 10px;
   font-size: 16px;
   border-radius: 5px;

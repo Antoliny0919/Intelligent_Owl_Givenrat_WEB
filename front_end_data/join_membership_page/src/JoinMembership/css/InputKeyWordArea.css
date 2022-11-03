@@ -1,5 +1,9 @@
 .input-key-word {
-  display: block;
-  margin-right: 150px;
+  line-height: 20px;
   font-weight: 900;
+}
+
+.keyword-area {
+  width: 140px;
+  padding-top: 12px;
 }
