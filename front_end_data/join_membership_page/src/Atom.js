@@ -58,3 +58,7 @@ export const state = atom({
   }
 })
 
+export const addressInputCheck = atom({
+  key: 'addressInputCheck',
+  default: true,
+})

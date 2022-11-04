@@ -11,29 +11,18 @@ export default function FormBlock() {
 
   const inputData = useRecoilValue(state)
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, []);
-
   const openAddressPage = (e) => {
     e.preventDefault();
-    const script = document.createElement('script');
-    script.src = "http://localhost:3000/AddressPage.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
+    if (e.target.id === 'address-page')
+    {
+      const script = document.createElement('script');
+      script.src = "http://localhost:3000/AddressPage.js";
+      script.async = true;
+      document.body.appendChild(script);
+    } else {
+      return;
     }
+
   }
 
 
@@ -49,9 +38,11 @@ export default function FormBlock() {
                 openAddressPage={openAddressPage}
                 ></MemberInfoInputArea>
                 {Duplication && <DuplicationCheckArea></DuplicationCheckArea>}
+
               </div>
               )
           })}
+
       </div>
   )
 }
