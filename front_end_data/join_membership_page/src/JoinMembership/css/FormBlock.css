@@ -17,3 +17,14 @@
   width: 100%;
   padding: 10px 20px;
 }
+
+#again-button-hide {
+  display: none;
+}
+
+.again-button {
+  font-size: 12px;
+  border: solid #B2731A 2px;
+  color: #B2731A;
+
+}

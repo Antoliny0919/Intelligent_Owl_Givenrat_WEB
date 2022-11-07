@@ -58,7 +58,12 @@ export const state = atom({
   }
 })
 
-export const addressInputCheck = atom({
-  key: 'addressInputCheck',
-  default: true,
+export const emailState = atom({
+  key: 'emailState',
+  default: false,
+})
+
+export const againSearch = atom({
+  key: 'againSearch',
+  default: false,
 })

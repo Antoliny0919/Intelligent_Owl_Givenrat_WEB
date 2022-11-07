@@ -1,17 +1,18 @@
-import { useRecoilValue } from 'recoil';
-import { addressInputCheck } from '../../Atom';
 import '../css/MemberInfoInputArea.css';
 
 
-export default function InputBlock({ placeholder, inputType, openAddressPage }) {
+export default function InputBlock({ placeholder, inputType, openAddressPage, addressInputComplete }) {
   
-  const checker = useRecoilValue(addressInputCheck)
 
   return (
     <div className="input-container">
       {placeholder ? 
       <input className="input-area"type={inputType} placeholder={placeholder} autoComplete="on"></input> 
-      : checker && <input id="address-page" type={inputType} onClick={openAddressPage} value="⚲ 주소 검색"></input>}
+      : <input id="address-page"
+      type={inputType} 
+      onClick={openAddressPage} 
+      onChange={addressInputComplete}
+      value="⚲ 주소 검색"></input>}
     </div>
   )
 }

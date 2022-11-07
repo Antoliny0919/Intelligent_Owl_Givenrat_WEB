@@ -1,11 +1,9 @@
-
-
 new daum.Postcode({
   oncomplete: function(data) {
 
   var roadAddr = data.roadAddress;
   
-  var extraRoadAddr = ''; // 참고 항목 변수
+  var extraRoadAddr = false; // 참고 항목 변수
 
   // 법정동명이 있을 경우 추가한다. (법정리는 제외)
   // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
@@ -21,12 +19,20 @@ new daum.Postcode({
       extraRoadAddr = ' (' + extraRoadAddr + ')';
   }
 
-  if(roadAddr) {
-    const buttonTag = document.getElementById("address-page");
-    buttonTag.readOnly = true;
-    buttonTag.type = "text";
-    buttonTag.value = roadAddr;
-    buttonTag.id = "address-in";
+  if (roadAddr) {
+      try {
+        var buttonTag = document.getElementById("address-page");
+        const againButton = document.getElementById("again-button-hide");
+        buttonTag.readOnly = true;
+        buttonTag.id = "address-in";
+        againButton.removeAttribute('id');
+        againButton.className = "check-button again-button";
+      } catch {
+        var buttonTag = document.getElementById("address-in");
+      } finally {
+        buttonTag.value = roadAddr;
+      }
+
   }
 
   }
