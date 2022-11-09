@@ -1,14 +1,14 @@
 import '../css/MemberInfoInputArea.css';
 
 
-export default function InputBlock({ placeholder, inputType, openAddressPage, addressInputComplete }) {
+export default function InputBlock({ placeholder, inputType, openAddressPage, addressInputComplete}) {
   
 
   return (
     <div className="input-container">
-      {placeholder ? 
+      {placeholder ?
       <input className="input-area"type={inputType} placeholder={placeholder} autoComplete="on"></input> 
-      : <input id="address-page"
+      :<input id="address-page"
       type={inputType} 
       onClick={openAddressPage} 
       onChange={addressInputComplete}

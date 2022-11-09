@@ -5,6 +5,7 @@ import { state, againSearch } from '../../Atom';
 import InputKeyWordArea from './InputKeyWordArea';
 import MemberInfoInputArea from './MemberInfoInputArea';
 import DuplicationCheckArea from './DuplicationCheckArea';
+import NoneEssentialInputBlock from './NoneEssentialInputBlock';
 import '../css/FormBlock.css';
 
 export default function FormBlock() {
@@ -37,7 +38,7 @@ export default function FormBlock() {
 
   return (
       <div className='form-block-container'>
-        {inputData.form_section.map(({ keyWord, placeholder, inputType, Duplication, attentionBlock }) => {
+        {inputData.form_section.map(({ keyWord, placeholder, inputType, Duplication, attentionBlock}) => {
             return (
               <div className='member-data-input-area'>
                 <InputKeyWordArea keyWord={keyWord} attentionBlock={attentionBlock}></InputKeyWordArea>
@@ -49,11 +50,11 @@ export default function FormBlock() {
                 ></MemberInfoInputArea>
                 {Duplication && <DuplicationCheckArea></DuplicationCheckArea>}
                 {keyWord === '주소' ? againButton && <div className='duplication-check-area'><button id='again-button-hide' onClick={openAddressPage} type='button'>⚲ 주소 재검색</button></div> : <Fragment></Fragment>}
-
               </div>
               )
           })}
 
+        <NoneEssentialInputBlock></NoneEssentialInputBlock>
       </div>
   )
 }

@@ -23,6 +23,8 @@ new daum.Postcode({
       try {
         var buttonTag = document.getElementById("address-page");
         const againButton = document.getElementById("again-button-hide");
+        const detailAddressArea = document.getElementById("detail");
+        detailAddressArea.value = "("+ data.zonecode + ")"; 
         buttonTag.readOnly = true;
         buttonTag.id = "address-in";
         againButton.removeAttribute('id');
