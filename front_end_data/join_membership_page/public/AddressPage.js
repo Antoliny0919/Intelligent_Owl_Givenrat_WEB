@@ -21,18 +21,33 @@ new daum.Postcode({
 
   if (roadAddr) {
       try {
+
+        // 처음 roadAddr 성공시 기존 주소 입력칸의 어트리뷰트를 변경
+        // 해당 입력칸이 읽기모드가 되어 주소검색 기능을 해제 + 해당 버튼에 주소값이 채워짐(roadAddr)
         var buttonTag = document.getElementById("address-page");
-        const againButton = document.getElementById("again-button-hide");
-        const detailAddressArea = document.getElementById("detail");
-        detailAddressArea.value = "("+ data.zonecode + ")"; 
         buttonTag.readOnly = true;
         buttonTag.id = "address-in";
+
+        // 처음 roadAddr 성공시 숨겨둔 재검색 버튼이 등장
+        const againButton = document.getElementById("again-button-hide");
         againButton.removeAttribute('id');
         againButton.className = "check-button again-button";
+
+        // 처음 roadAddr 성공시 숨겨둔 상세주소 input 공간이 등장
+        // 해당 상세주소공간에 우편번호가 입력됨
+        const detailAddressArea = document.getElementById("detail-hide");
+        var detailAddressInput = document.getElementById('detail-address');
+
+        detailAddressArea.removeAttribute('id');
+
+
       } catch {
+        // 처음 roadAddr 성공시 id값을 변환했기 때문에 다른 id값으로 접근
         var buttonTag = document.getElementById("address-in");
+        var detailAddressInput = document.getElementById('detail-address');
       } finally {
         buttonTag.value = roadAddr;
+        detailAddressInput.value = '(' + data.zonecode + ')';
       }
 
   }

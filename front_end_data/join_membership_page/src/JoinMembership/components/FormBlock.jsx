@@ -5,7 +5,7 @@ import { state, againSearch } from '../../Atom';
 import InputKeyWordArea from './InputKeyWordArea';
 import MemberInfoInputArea from './MemberInfoInputArea';
 import DuplicationCheckArea from './DuplicationCheckArea';
-import NoneEssentialInputBlock from './NoneEssentialInputBlock';
+import DetailAddressInputArea from './DetailAddressInputArea';
 import '../css/FormBlock.css';
 
 export default function FormBlock() {
@@ -31,9 +31,6 @@ export default function FormBlock() {
 
   }
 
-  const addressInputComplete = (e) => {
-    console.log(e);
-  }
 
 
   return (
@@ -46,7 +43,6 @@ export default function FormBlock() {
                 placeholder={placeholder} 
                 inputType={inputType}
                 openAddressPage={openAddressPage}
-                addressInputComplete={addressInputComplete}
                 ></MemberInfoInputArea>
                 {Duplication && <DuplicationCheckArea></DuplicationCheckArea>}
                 {keyWord === '주소' ? againButton && <div className='duplication-check-area'><button id='again-button-hide' onClick={openAddressPage} type='button'>⚲ 주소 재검색</button></div> : <Fragment></Fragment>}
@@ -54,7 +50,7 @@ export default function FormBlock() {
               )
           })}
 
-        <NoneEssentialInputBlock></NoneEssentialInputBlock>
+        <DetailAddressInputArea></DetailAddressInputArea>
       </div>
   )
 }

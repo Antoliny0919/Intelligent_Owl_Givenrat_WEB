@@ -54,7 +54,13 @@ export const state = atom({
         Duplication: false,
         attentionBlock: true,
       },
-    ]
+    ],
+    detail_address_form_section: {
+      keyWord: false,
+      attentionBlock: false,
+      inputType: 'text',
+      placeholder: false,
+    }
   }
 })
 
@@ -66,15 +72,4 @@ export const emailState = atom({
 export const againSearch = atom({
   key: 'againSearch',
   default: false,
-})
-
-export const noneEssentialState = atom({
-  key: 'noneEssentialState',
-  defailt: {
-    form_section: [
-      {
-        keyWord: false,
-      }
-    ]
-  }
 })

@@ -1,7 +1,7 @@
 import '../css/MemberInfoInputArea.css';
 
 
-export default function InputBlock({ placeholder, inputType, openAddressPage, addressInputComplete}) {
+export default function InputBlock({ placeholder, inputType, openAddressPage }) {
   
 
   return (
@@ -11,7 +11,6 @@ export default function InputBlock({ placeholder, inputType, openAddressPage, ad
       :<input id="address-page"
       type={inputType} 
       onClick={openAddressPage} 
-      onChange={addressInputComplete}
       value="⚲ 주소 검색"></input>}
     </div>
   )
