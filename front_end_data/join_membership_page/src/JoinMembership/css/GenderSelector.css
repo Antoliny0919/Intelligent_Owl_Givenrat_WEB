@@ -1,4 +1,34 @@
+.gender-selector-button-area {
+  font-size: 16px;
+  line-height: 2rem;
+  padding: 0.2em 0.4em;
+}
+
+.gender-selector-keyword {
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
 [type="radio"] {
   vertical-align: middle;
   appearance: none;
+  border: max(2px, 0.1em) solid #124E15;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  transition: border 0.5s ease-in-out;
+}
+
+[type="radio"]:checked {
+  border: 0.3em solid #B8C625;
+}
+
+[type="radio"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) dotted #B8C625;
+}
+
+[type="radio"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) #0E4A11;
+  cursor: pointer;
 }

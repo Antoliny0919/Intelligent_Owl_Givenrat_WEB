@@ -1,14 +1,13 @@
 import { Fragment } from "react";
 import '../css/GenderSelector.css';
 
-export default function GenderSelector() {
+export default function GenderSelector({ keyWord}) {
   return (
     <Fragment>
-      <label className="">
-        <input type="radio"></input>
-        <span>남자</span>
+      <label className="gender-selector-button-area">
+        <input type="radio" name="contact" checked></input>
+        <span className="gender-selector-keyword">{keyWord}</span>
       </label>
-      
     </Fragment>
   )
 }

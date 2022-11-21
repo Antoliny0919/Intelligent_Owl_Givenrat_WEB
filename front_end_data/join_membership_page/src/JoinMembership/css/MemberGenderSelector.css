@@ -3,4 +3,10 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-left: 20px;
+  height: 50px;
+  width: 350px;
+  border: solid #164C16 2px;
+  background-color: #1C631C;
+  border-radius: 5px;
 }

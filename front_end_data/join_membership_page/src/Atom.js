@@ -55,16 +55,30 @@ export const state = atom({
         attentionBlock: true,
       },
     ],
+
     detail_address_form_section: {
       keyWord: false,
       attentionBlock: false,
       inputType: 'text',
       placeholder: false,
     },
+
     gender_selector_form_section: {
-      keyWord: '성별',
-      attentionBlock: false,
+      form_data : [
+        {
+          keyWord: '남자',
+        },
+        {
+          keyWord: '여자',
+        },
+        {
+          keyWord: '선택안함',
+        },
+      ],
+      title : "성별",
     }
+
+
   }
 })
 
@@ -77,3 +91,4 @@ export const againSearch = atom({
   key: 'againSearch',
   default: false,
 })
+
