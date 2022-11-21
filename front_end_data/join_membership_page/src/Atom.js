@@ -60,6 +60,10 @@ export const state = atom({
       attentionBlock: false,
       inputType: 'text',
       placeholder: false,
+    },
+    gender_selector_form_section: {
+      keyWord: '성별',
+      attentionBlock: false,
     }
   }
 })

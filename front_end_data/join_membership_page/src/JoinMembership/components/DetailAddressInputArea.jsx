@@ -13,7 +13,7 @@ export default function DetailAddressInputArea() {
   const compress = inputData.detail_address_form_section;
 
   return(
-    // inputState 주소검색기능을 이용성공했을시 true 변환(상세주소 입력칸이 나타나게 됨)
+    // inputState 주소검색기능을 성공적으로 완료했을시 true 변환(상세주소 입력칸이 나타나게 됨)
     inputState ? 
     <div id='detail-hide' className='member-data-input-area'>
       <InputKeyWordArea keyWord={compress.keyWord} attentionBlock={compress.attentionBlock}></InputKeyWordArea>
