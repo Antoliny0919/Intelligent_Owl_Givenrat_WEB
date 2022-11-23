@@ -7,6 +7,7 @@ import MemberInfoInputArea from './MemberInfoInputArea';
 import DuplicationCheckArea from './DuplicationCheckArea';
 import DetailAddressInputArea from './DetailAddressInputArea';
 import MemberGenderSelector from './MemberGenderSelector';
+import BirthDateInputArea from './BirthDateInputArea';
 import '../css/FormBlock.css';
 
 export default function FormBlock() {
@@ -58,6 +59,7 @@ export default function FormBlock() {
         
         <DetailAddressInputArea></DetailAddressInputArea>
         <MemberGenderSelector></MemberGenderSelector>
+        <BirthDateInputArea></BirthDateInputArea>
       </div>
   )
 }

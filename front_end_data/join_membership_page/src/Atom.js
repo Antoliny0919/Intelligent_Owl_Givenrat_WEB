@@ -27,6 +27,13 @@ export const state = atom({
         attentionBlock: true,
       },
       {
+        keyWord: '이메일',
+        placeholder: '예: intelligent@givenrat.com',
+        inputType: 'email',
+        Duplication: true,
+        attentionBlock: true,
+      },
+      {
         keyWord: '상호',
         placeholder: '상호를 입력해 주세요',
         inputType: 'text',
