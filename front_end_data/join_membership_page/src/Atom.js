@@ -82,7 +82,31 @@ export const state = atom({
           keyWord: '선택안함',
         },
       ],
-      title : "성별",
+      title: "성별",
+    },
+    
+    birth_date_from_section: 
+    
+    {
+      form_data: [
+        {
+          placeholder: 'YYYY',
+          maxLength: '4',
+          divide: true,
+        },
+        {
+          placeholder: 'MM',
+          maxLength: '2',
+          divide: true,
+        },
+        {
+          placeholder: 'DD',
+          maxLength: '2',
+          divide: false,
+        }
+      ],
+
+      title: '생년월일',
     }
 
 
