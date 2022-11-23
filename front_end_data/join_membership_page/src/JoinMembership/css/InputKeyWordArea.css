@@ -1,10 +1,14 @@
 .input-key-word {
-  line-height: 20px;
+  display: block;
   font-weight: 900;
+  line-height: 30px;
 }
 
 .keyword-area {
+  display: flex;
   width: 140px;
-  padding-top: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
 }
 
