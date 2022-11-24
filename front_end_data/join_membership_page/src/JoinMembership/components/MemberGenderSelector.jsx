@@ -14,8 +14,10 @@ export default function MemberGenderSelector() {
     <div className='member-data-input-area'>
       <InputKeyWordArea keyWord={compress.title} attentionBlock={compress.attentionBlock}></InputKeyWordArea>
       <fieldset id='gender-selector-container'>
-        {compress.form_data.map(({ keyWord }) => {
-          return <GenderSelector keyWord={keyWord}></GenderSelector>
+        {compress.form_data.map(({ keyWord, id }) => {
+          return (
+            <GenderSelector keyWord={keyWord} key={id}></GenderSelector>
+          )
         })}
       </fieldset>
     </div>

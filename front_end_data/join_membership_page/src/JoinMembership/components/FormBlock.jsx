@@ -38,9 +38,9 @@ export default function FormBlock() {
 
   return (
       <div className='form-block-container'>
-        {inputData.form_section.map(({ keyWord, placeholder, inputType, Duplication, attentionBlock}) => {
+        {inputData.form_section.map(({ keyWord, placeholder, inputType, Duplication, attentionBlock, id}) => {
             return (
-              <div className='member-data-input-area'>
+              <div className='member-data-input-area' key={id}>
                 {/* InputKeyWord --> 해당 인풋태그의 키워드 */}
                 <InputKeyWordArea keyWord={keyWord} attentionBlock={attentionBlock}></InputKeyWordArea>
                 {/* 실질적인 인풋태그가 들어갈 위치 필요한 속성  */}

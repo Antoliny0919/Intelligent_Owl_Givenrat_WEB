@@ -15,8 +15,8 @@ export default function BirthDateInputArea() {
       <InputKeyWordArea keyWord={compress.title} attentionBlock={compress.attentionBlock}></InputKeyWordArea>
       <div id='birth-date-input-container'>
         <div id='birth-date-input-area'>
-          {compress.form_data.map(({ placeholder, maxLength, divide }) => {
-            return <BirthDateBlock placeholder={placeholder} maxLength={maxLength} divide={divide}></BirthDateBlock>
+          {compress.form_data.map(({ placeholder, maxLength, divide, id }) => {
+            return <BirthDateBlock placeholder={placeholder} maxLength={maxLength} divide={divide} key={id}></BirthDateBlock>
           })}
         </div>
 
