@@ -64,7 +64,6 @@ export const state = atom({
       {
         id: 8,
         keyWord: '주소',
-        placeholder: false,
         inputType: 'button',
         Duplication: false,
         attentionBlock: true,

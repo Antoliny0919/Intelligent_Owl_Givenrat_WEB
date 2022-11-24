@@ -18,7 +18,7 @@ export default function DetailAddressInputArea() {
     <div id='detail-hide' className='member-data-input-area'>
       <InputKeyWordArea keyWord={compress.keyWord} attentionBlock={compress.attentionBlock}></InputKeyWordArea>
       <div className='input-container'>
-        <input className="input-area" id='detail-address' type={compress.inputType} placeholder={compress.placeholder} autoComplete="on"></input> 
+        <input className="input-area" id='detail-address' type={compress.inputType} autoComplete="on"></input> 
       </div>
     </div> 
     : <Fragment></Fragment>

@@ -22,7 +22,7 @@ export default function FormBlock() {
     if (e.target.id === 'address-page' || e.target.className === 'check-button again-button')
     {
       const script = document.createElement('script');
-      script.src = "http://localhost:3000/AddressPage.js";
+      script.src = "http://192.168.0.7:3000/AddressPage.js";
       script.async = true;
       document.body.appendChild(script);
       setAgainButton(true);
@@ -38,7 +38,7 @@ export default function FormBlock() {
 
   return (
       <div className='form-block-container'>
-        {inputData.form_section.map(({ keyWord, placeholder, inputType, Duplication, attentionBlock, id}) => {
+        {inputData.form_section.map(({ id, keyWord, placeholder, inputType, Duplication, attentionBlock }) => {
             return (
               <div className='member-data-input-area' key={id}>
                 {/* InputKeyWord --> 해당 인풋태그의 키워드 */}
