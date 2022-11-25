@@ -10,6 +10,7 @@ export default function MemberGenderSelector() {
   const inputData = useRecoilValue(state);
   const compress = inputData.gender_selector_form_section;
 
+
   return (
     <div className='member-data-input-area'>
       <InputKeyWordArea keyWord={compress.title} attentionBlock={compress.attentionBlock}></InputKeyWordArea>
