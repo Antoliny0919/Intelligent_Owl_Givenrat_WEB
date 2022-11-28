@@ -36,10 +36,13 @@ new daum.Postcode({
 
         // 처음 roadAddr 성공시 숨겨둔 상세주소 input 공간이 등장
         // 해당 상세주소공간에 우편번호가 입력됨
-        const detailAddressArea = document.getElementById("detail-hide");
-        var detailAddressInput = document.getElementById('detail-address');
+        const detailAddressArea = document.querySelectorAll(".detail-hide");
 
-        detailAddressArea.removeAttribute('id');
+        var detailAddressInput = document.getElementById("detail-address");
+
+        for (let er of detailAddressArea) {
+          er.classList.remove("detail-hide");
+        }
 
 
       } catch {

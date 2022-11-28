@@ -1,4 +1,6 @@
-#detail-hide {
+
+
+div .detail-hide {
   padding-top: 0px;
   padding-bottom: 0px;
   display: none;
@@ -8,4 +10,8 @@
   width: 470px;
   border: solid #8D981E 2px;
   background-color: #1D5213;
+}
+
+.blank-area {
+  width: 140px;
 }

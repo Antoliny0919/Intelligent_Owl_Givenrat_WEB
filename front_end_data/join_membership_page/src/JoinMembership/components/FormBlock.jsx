@@ -36,7 +36,7 @@ export default function FormBlock() {
 
 
   return (
-      <form className='form-block-container' action="#">
+      <div className='form-block-container' >
         {inputData.form_section.map(({ id, keyWord, placeholder, inputType, Duplication, attentionBlock }) => {
             return (
               <div className='member-data-input-area' key={id}>
@@ -60,6 +60,6 @@ export default function FormBlock() {
         <MemberGenderSelector></MemberGenderSelector>
         <BirthDateInputArea></BirthDateInputArea>
         <input type="submit" value="가입하기"></input>
-      </form>
+      </div>
   )
 }

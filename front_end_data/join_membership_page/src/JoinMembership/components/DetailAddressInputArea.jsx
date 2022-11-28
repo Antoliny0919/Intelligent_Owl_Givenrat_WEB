@@ -14,14 +14,19 @@ export default function DetailAddressInputArea() {
 
   return(
     // inputState 주소검색기능을 성공적으로 완료했을시 true 변환(상세주소 입력칸이 나타나게 됨)
-    inputState ? 
-    <div id='detail-hide' className='member-data-input-area'>
-      <InputKeyWordArea keyWord={compress.keyWord} attentionBlock={compress.attentionBlock}></InputKeyWordArea>
-      <div className='input-container'>
-        <input className="input-area" id='detail-address' type={compress.inputType} autoComplete="on"></input> 
+    <div>
+      {inputState ?
+      <div className='member-data-input-area detail-hide'>
+        <div className='blank-area'></div>
+        <div className='input-container'>
+          <input className="input-area" id='detail-address' type={compress.inputType} autoComplete="on"></input> 
+        </div>
       </div>
-    </div> 
-    : <Fragment></Fragment>
+      : <Fragment></Fragment>}
+      <div className='detail-hide'>
+        <h1>*상세주소를 입력해주세요</h1>
+      </div>
+    </div>
 
   )
 }
