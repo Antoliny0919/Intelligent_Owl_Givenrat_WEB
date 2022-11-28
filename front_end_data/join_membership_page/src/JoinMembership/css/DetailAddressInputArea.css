@@ -1,9 +1,12 @@
-
-
 div .detail-hide {
   padding-top: 0px;
   padding-bottom: 0px;
   display: none;
+}
+
+div .info-true {
+  margin-bottom: 0px;
+  padding-bottom: 7px;
 }
 
 #detail-address {
@@ -14,4 +17,16 @@ div .detail-hide {
 
 .blank-area {
   width: 140px;
+}
+
+.information-guide-area {
+  display: flex;
+  flex-direction: row;
+}
+
+.information-guide {
+  margin-left: 50px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  color: #4DC566;
 }
