@@ -8,7 +8,7 @@
 
 .title-area {
   font-size: 13px;
-  color: #1C4F17;
+  color: #153D12;
   margin-left: 0.1rem;
   margin-bottom: 0.3rem;
   font-weight: 900;
@@ -19,7 +19,7 @@
 .id-area {
   display: block;
   border: none;
-  border-bottom: 0.1rem solid #1C4F17;
+  border-bottom: 0.1rem solid #153D12;
   height: 2.0rem;
   width: 20.0rem;
   font-size: 0.8rem;
@@ -28,7 +28,7 @@
 }
 
 .id-area::placeholder {
-  color: #1C4F17;
+  color: #153D12;
 }
 
 .id-area:hover {
