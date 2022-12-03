@@ -24,16 +24,13 @@ class Sheet():
     sheet_name = self.__class__.find_sheet_name.findall(str(self._sheet_obj))
     return f'<Sheet : {"".join(sheet_name[1:])}({self._main_brand})>'
   
-  
   def __repr__(self) -> str:
     return f'sheet_obj : {self._sheet_obj}\nmain_brand : {self._main_brand}\nsub_brand : {self._sub_brand}\n\
 start_row : {self._start_row}\nmax_row : {self._max_row}\nname_col : {self.valid_name_col}\nsize_col : {self.valid_size_col}\n\
 price_col : {self.valid_price_col}\nattr_col : {self.valid_attr_col}\ncodenum_col : {self.valid_codenum_col}\n\n'
-  
     
   def __getitem__(self, index):
     return self._sheet_obj[index]
-  
   
   def valid_range(self) -> range:
     """
@@ -41,16 +38,12 @@ price_col : {self.valid_price_col}\nattr_col : {self.valid_attr_col}\ncodenum_co
     """
     return range(self._start_row, self._max_row + 1)
   
-  
   def search_cell_value(self, col, row):
     """
     행, 열 값을 매개변수로 받아 해당 엑셀 시트의 셀값을 반환
     """
 
     return self[col+str(row)].value
-
-
-  
   
   def valid_keywords(self):
     """

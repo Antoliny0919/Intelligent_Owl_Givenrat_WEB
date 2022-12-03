@@ -1,5 +1,5 @@
-import openpyxl
 import re
+import openpyxl
 from collections.abc import MutableSequence, MutableMapping
 from .cell_selector.selector_match_position import selector_match_cell
 from .cell_selector.selector import name_selector
