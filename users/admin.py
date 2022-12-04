@@ -4,7 +4,29 @@ from .models import User
 
 # Register your models here.
 
-admin.site.register(User, UserAdmin)
+class CustomUserAdmin(UserAdmin):
+  
+    
+      
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                # admin페이지 user 추가시 입력사항 form 추가
+                "fields": ("username", "password1", "password2", "email", "company_name", "company_phone_number",
+                          "fax_number", "company_address", "gender", "birthdate"),
+            },
+        ),
+    )
+
+
+
+
+
+admin.site.register(User, CustomUserAdmin)
+
+
 
 
 

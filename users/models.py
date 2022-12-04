@@ -6,23 +6,23 @@ from phonenumber_field.modelfields import PhoneNumberField
 class User(AbstractUser):
   MAN = 'MAN'
   WOMAN = 'WOMAN'
-  NOT_CHOICE = 'X'
+  NOT_CHOICE = 'DO NOT SELECT'
   
   GENDER_CHOICES = [
     (MAN, 'Man'),
     (WOMAN, 'Woman'),
-    (NOT_CHOICE, ' '),
+    (NOT_CHOICE, 'Do Not Select'),
   ]
 
   email = models.EmailField(("email address"), max_length=150, default="")
   company_name = models.CharField(max_length=100, default="")
   company_phone_number = PhoneNumberField(default="")
-  fax_number = PhoneNumberField(blank=True, default="")
+  fax_number = PhoneNumberField(default="")
   company_address = models.CharField(max_length=256, default="")
   
   # gender & birthdate 는 필수 입력 사항 x --> null = True
-  gender = models.CharField(max_length= 10, choices=GENDER_CHOICES, default=NOT_CHOICE, null=True)
-  birthdate = models.CharField(max_length=8, null=True)
+  gender = models.CharField(max_length= 13, choices=GENDER_CHOICES, default=NOT_CHOICE, blank=True)
+  birthdate = models.DateField(blank=True)
   
   
   
