@@ -1,0 +1,45 @@
+@media screen and (min-width: 1450px){
+    .navBar {
+        max-width: 1500px;
+    }
+}   
+
+
+header {
+    background-color: #376F46;
+    border-bottom: 5px solid #2E6F33;
+}
+
+.navBar {
+    height: 60px;
+}
+
+.__block {
+    width: 90%; 
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.__wrapper {
+    justify-content: space-between;
+    display: flex;
+    height: 100%;
+    padding: 0px;
+    margin: 0%;
+    width: 100%;
+}
+
+.__contents {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 100%;
+}
+
+.__logins {
+    display: flex;
+    align-items: center;
+}
