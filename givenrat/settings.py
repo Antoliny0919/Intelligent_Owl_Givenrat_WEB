@@ -143,6 +143,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'search/templates/search/base_navbar/build/static'),
                     os.path.join(BASE_DIR, 'search/templates/search/homepage_main/build/static'),
                     os.path.join(BASE_DIR, 'search/templates/search/search_page/build/static'),
+                    os.path.join(BASE_DIR, 'users/templates/users/login_page/build/static'),
                     ]
 
 # Default primary key field type
