@@ -24,7 +24,7 @@ class NavbarBase extends Component {
             ],
 
             // Navbar 오른쪽부분 로그인/회원가입 버튼
-            login: {title: '로그인/회원가입', link: '#'},
+            login: {title: '로그인/회원가입', link: '/login/'},
             start: {title: '시작하기!', link: '#'},
 
             // Navbar mini 로고(화면사이즈가 줄었을때 content들을 담은 링크/이미지)
