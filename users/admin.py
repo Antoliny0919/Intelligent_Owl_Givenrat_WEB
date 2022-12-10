@@ -30,22 +30,25 @@ class CustomUserAdmin(UserAdmin):
             },
         ),
     )
+    # Add Userpage to be displayed field(admin site)
     add_fieldsets = (
         (
             None,
             {
                 "classes": ("wide",),
-                "fields": ("username", "password1", "password2"),
+                "fields": ("username", "password1", "password2",
+                            "company_name", "company_phone_number", "fax_number",
+                            "company_address"),
             },
         ),
     )
     form = UserChangeForm
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
-    list_display = ("username", "email", "first_name", "last_name", "is_staff")
+    list_display = ("username", "email", "company_name", "company_address")
     list_filter = ("is_staff", "is_superuser", "is_active", "groups")
     search_fields = ("username", "first_name", "last_name", "email")
-    ordering = ("username",)
+    ordering = ("is_staff", "username")
     filter_horizontal = (
         "groups",
         "user_permissions",
