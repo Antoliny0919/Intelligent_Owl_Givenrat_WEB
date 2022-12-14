@@ -46,10 +46,10 @@ class CustomUserAdmin(UserAdmin):
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
     list_display = ("username", "email", "company_name", "company_address")
-    list_filter = ("is_staff",)
+    list_filter = ("is_superuser",)
     search_fields = ("username", "email", "company_name", "company_address",
                     "fax_number", "company_phone_number", "company_address")
-    ordering = None
+    ordering = ("username",)
     filter_horizontal = (
         "groups",
         "user_permissions",
