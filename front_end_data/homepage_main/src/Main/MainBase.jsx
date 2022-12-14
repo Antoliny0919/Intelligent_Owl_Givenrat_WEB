@@ -1,4 +1,4 @@
-import MainContent from './components/MainContent';
+import BannerContent from './components/BannerContent';
 import './css/MainBase.css';
 
 
@@ -15,16 +15,13 @@ export default function MainBase() {
     }
 
     return (
-        <main>
-            <div className='main'>
-                <div className='main __content __notebook'>
-                    <MainContent
-                    mainImgPath={state.mainImg.imgPath}
-                    subImgPath={state.subImg.imgPath}
-                    startRoot={state.startRoot.Path}
-                    ></MainContent>
+        <div id="banner">
+            <div id='banner-layout-container'>
+                <div id='banner-layout-side-margin'>
+                    <BannerContent></BannerContent>
                 </div>
             </div>
-        </main>
+        </div>
+
     )
 }
