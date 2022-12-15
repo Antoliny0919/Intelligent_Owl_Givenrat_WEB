@@ -17,7 +17,8 @@
 .join-membership-link {
   text-decoration: none;
   transition: all 0.7s;
-  color: white;
+  color: #214E2D;
+  font-weight: 900;
 }
 
 .join-membership-link:hover {
