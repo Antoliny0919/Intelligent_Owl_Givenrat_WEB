@@ -3,3 +3,9 @@
   flex-direction: column;
   align-items: center;
 }
+
+#banner-img {
+  height: 15vw;
+  width: 70vw;
+
+}

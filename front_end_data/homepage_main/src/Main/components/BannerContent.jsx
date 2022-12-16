@@ -1,10 +1,10 @@
-import '../css/MainBase.css';
+import '../css/BannerContent.css';
 
-export default function BannerContent() {
+export default function BannerContent({ BannerImg }) {
 
   return (
     <div id='banner-content-area'>
-      <h1>hello</h1>
+      <img src={BannerImg} alt="no_img" id="banner-img"></img>
     </div>
   )
 }

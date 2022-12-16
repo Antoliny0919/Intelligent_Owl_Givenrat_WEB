@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MainBase from './Main/MainBase';
+import BannerBase from './Main/BannerBase';
 import ContentBase from './Content/ContentBase';
 
 
@@ -10,7 +10,7 @@ import ContentBase from './Content/ContentBase';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MainBase></MainBase>
+    <BannerBase></BannerBase>
     <ContentBase></ContentBase>
   </React.StrictMode>
 );
