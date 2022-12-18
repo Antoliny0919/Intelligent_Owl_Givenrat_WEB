@@ -23,12 +23,11 @@
 
 #banner {
     background-color: #376F46;
-    font-size: 16px;
 }
 
 #banner-layout-container {
     padding-top: 2vw;
-    padding-bottom: 10vw;
+    padding-bottom: 5vw;
 }
 
 #banner-layout-side-margin {

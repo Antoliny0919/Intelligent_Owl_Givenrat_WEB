@@ -1,11 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+
 #banner-content-area {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 2vw;
 }
 
 #banner-img {
   height: 15vw;
   width: 70vw;
+}
 
+#banner-text {
+  font-family: 'Gowun Dodum', sans-serif;
+  color: #15320D;
+  padding: 0vw 5vw 3vw 5vw;
+  font-size: inherit;
+}
+
+#banner-start-button {
+  height: 3vw;
+  width: 15vw;
 }
