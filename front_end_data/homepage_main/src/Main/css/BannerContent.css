@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap');
 
 #banner-content-area {
   display: flex;
@@ -21,6 +21,21 @@
 }
 
 #banner-start-button {
-  height: 3vw;
-  width: 15vw;
+  position: relative;
+  height: 4vw;
+  width: 20vw;
+  font-weight: 900;
+  font-size: 1.3vw;
+  font-family: 'Nanum Gothic Coding', monospace;
+  border-radius: 5px;
+  border: 2px solid #3DB164;
+  background-color: #3DB164;
+  color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: transform 0.7s;
+}
+
+#banner-start-button:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
 }
