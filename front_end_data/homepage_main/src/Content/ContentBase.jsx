@@ -1,5 +1,4 @@
 // import { useState, useEffect } from 'react';
-import ContentBlock from './components/ContentBlock';
 import ContentExplain from './components/ContentExplain';
 import './css/ContentBase.css';
 
@@ -26,15 +25,12 @@ export default function ContentBase() {
         <article>
             <div className="contentsArea">
                 {/* 버젼(기능)에 대한 설명이 담긴 블럭 */}
-                <ContentExplain>
-                {/* 버젼(기능)으로 이동할 수 있는 컨텐츠 영역
-                    <ContentBlock
-                    ImgPath={state.version1_ImgPath}
-                    MoveImagPath={state.version1_MoveImgPath}
-                    ChangeMoveImg={changeMoveImg}
-                    ChangeOriginalImg={changeOriginalImg}
-                    Link={state.version1_link}
-                    ></ContentBlock> */}
+                <ContentExplain
+                    imgPath={state.version1_ImgPath}
+                    moveImgPath={state.version1_MoveImgPath}
+                    changeMoveImg={changeMoveImg}
+                    changeOriginalImg={changeOriginalImg}
+                    link={state.version1_link}>
                 </ContentExplain>
             </div>
         </article>
