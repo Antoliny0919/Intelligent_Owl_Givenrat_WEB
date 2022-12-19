@@ -1,14 +1,44 @@
-.contentExplainBlock {
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap');
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid #376F46;
+    border-bottom: 2px solid #376F46;
+    border-radius: 3px;
+    background-color: rgba(55, 111, 70, 0.2);
+    padding-top: 1.7vw;
+    padding-left: 1.5vw;
 }
 
-#Explain {
-    display: inline;
-    border: 3px solid #357F2A;
-    background-color: #357F2A;
-    padding: 10px;
-    border-radius: 30px;
+.content-explain-area {
+    display: flex;
+    flex-direction: row;
 }
 
+.content-number {
+    font-weight: 900;
+    color: #1D4227;
+    font-size: 1.3vw;
+    font-family: 'Rubik', sans-serif;
+}
+
+.divide-line {
+    margin-left: 0.7vw;
+    margin-right: 0.7vw;
+    font-size: 1.2vw;
+}
+
+.content-name {
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 1.2vw;
+    margin-top: 0.2vw;
+}
+
+.content-explain {
+    font-size: 0.8vw;
+    padding-top: 0.5vw;
+    color: #313131;
+    font-family: 'Nanum Gothic Coding', monospace;
+}

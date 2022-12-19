@@ -2,8 +2,13 @@ import '../css/ContentExplain.css';
 
 export default function ContentExplain() {
     return(
-        <div className="contentExplainBlock">
-            <h1 id='Explain'>🌕 찾고싶은 공산품의 키워드를 입력하면 기벤라트가 해당 키워드에 맞는 공산품을 찾아줍니다! 🌕</h1>
+        <div className="content-container">
+            <div className="content-explain-area">
+                <span className="content-number">TOOL 1</span>
+                <span className='divide-line'>|</span>
+                <span className="content-name">공산품 검색</span>
+            </div>
+            <span className="content-explain">공산품과 관련된 키워드를 입력하면 기벤라트가 해당 키워드에 알맞는 공산품을 찾아줍니다.</span>
         </div>
     )
 }
