@@ -16,7 +16,7 @@ excel_files_list.remove('.DS_Store')
 
 
 if __name__ == "__main__":
-  
+  print(EXCELS_DIR_NAME)
   monkey_patch_openpyxl()
   # 다운로드한 엑셀파일에 있는 데이터 접근 --> 각 시트들을 파싱한 객체와 해당 시트의 범위에 대한 정보, 메인 브랜드이름 리턴
   excels_data = sheet_extraction(excel_files_list, EXCELS_DIR_PATH)
@@ -26,7 +26,3 @@ if __name__ == "__main__":
   
   # parse_sheets_data를 기반으로 공산품 데이터 파싱
   products_data = get_product_data(sheets_data)
-
-
-  
-  
