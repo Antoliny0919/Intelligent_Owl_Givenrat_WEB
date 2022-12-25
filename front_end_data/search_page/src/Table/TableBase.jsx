@@ -80,7 +80,6 @@ export default function TableBase() {
 
   return (
     <div id="table-data-area">
-      <span id="dividing-line"></span>
       <TableBlock
       readMoreFunc={handleReadMore}
       readDetailFunc={readDetail}

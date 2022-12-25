@@ -16,37 +16,37 @@ export default function FormBase() {
     form_first_section: [
       [
         // 가격 인풋 데이터
-        {name: '💲 가격 💲',
+        {
+        name: '💲 가격 💲',
         style: 'inputspace-block price',
         queryName: 'exact_price',
         }
       ],
       [
         // 품명 인풋 데이터
-        {name: '📦 품명 📦',
+        {
+        name: '📦 품명 📦',
         style: 'inputspace-block name',
         queryName: 'contains_name',
         }
       ],
-    ],
-
-    // 두번째 폼 라인의 데이터(세번째, 네번째 인풋은 같은 데이터를 가짐)
-    form_second_section: [
       [
+        {
         // 속성 인풋 데이터
-        {name: '🔑 속성 🔑',
+        name: '🔑 속성 🔑',
         style: 'inputspace-block attribute',
         queryName: 'contains_first_attribute',
         }
       ],
       [
+        {
         //속성 인풋 데이터
-        {name: '🔑 속성 🔑',
+        name: '🔑 속성 🔑',
         style: 'inputspace-block attribute',
         queryName: 'contains_second_attribute',
         }
       ],
-    ]
+    ],
   }
 
   // 공산품 검색 키워드(input.value)
@@ -74,8 +74,7 @@ export default function FormBase() {
       <span id="dividing-line"></span>
       <FormBlock
       imgPath={state.form_image}
-      formFirstSection={state.form_first_section}
-      formSecondSection={state.form_second_section}
+      formSection={state.form_first_section}
       searchProductFunc={searchProduct}
       >
       </FormBlock>

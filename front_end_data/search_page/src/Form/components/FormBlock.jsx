@@ -1,7 +1,7 @@
 import FormGroup from './FormGroup';
 import '../css/FormBlock.css';
 
-export default function FormBlock({ imgPath, formFirstSection, formSecondSection, searchProductFunc }) {
+export default function FormBlock({ imgPath, formSection, searchProductFunc }) {
   
   return (
     <div id='search-form-area'>
@@ -10,13 +10,9 @@ export default function FormBlock({ imgPath, formFirstSection, formSecondSection
         <div>
           <form id="form-main">
             <FormGroup
-            formSectionData={formFirstSection}
+            formSection={formSection}
+            searchProductFunc={searchProductFunc}
             ></FormGroup>
-            <FormGroup
-            formSectionData={formSecondSection}
-            >
-            </FormGroup>
-            <button id="form-submit-button" type="submit" onClick={searchProductFunc}>검색 ⚲</button>
           </form>
         </div>
       </div>
