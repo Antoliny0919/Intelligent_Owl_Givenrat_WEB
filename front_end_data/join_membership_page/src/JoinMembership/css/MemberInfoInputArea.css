@@ -15,8 +15,8 @@
   padding: 7px 10px;
   font-size: 16px;
   border-radius: 5px;
-  border: solid #164C16 2px;
-  background-color: #1C631C;
+  border: solid #B5B5B5 2px;
+  background-color: #F4F4F4;
   outline: none;
 }
 
@@ -26,14 +26,14 @@
 }
 
 .input-area::placeholder {
-  color: #103310;
+  color: #8F8E8E;
   font-weight: 900;
   font-family: 'Nanum Gothic', sans-serif;
 }
 
 .input-area:focus {
   outline-width: 0;
-  border: solid #134013 2px;
+  border: solid #134D1F 2px;
 }
 
 #address-page {
@@ -42,9 +42,9 @@
   width: 350px;
   padding: 7px 10px;
   border-radius: 5px;
-  border: solid #8D981E 2px;
-  color: #8D981E;
-  background-color: #1D5213;
+  border: solid #134D1F 2px;
+  color: #134D1F;
+  background-color: #F4F4F4;
   outline-width: 0;
   box-shadow: rgba(19, 78, 11, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   font-size: 14px;
@@ -64,9 +64,9 @@
   width: 350px;
   padding: 7px 10px;
   border-radius: 5px;
-  border: solid #8D981E 2px;
-  color: #8D981E;
-  background-color: #1D5213;
+  border: solid #134D1F 2px;
+  color: #383838;
+  background-color: #F4F4F4;
   outline-width: 0;
   font-size: 14px;
   font-family: 'Nanum Gothic', sans-serif;

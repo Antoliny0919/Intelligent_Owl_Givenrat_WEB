@@ -10,8 +10,8 @@
   height: 50px;
   width: 350px; 
   border-radius: 5px;
-  border: solid #8D981E 2px;
-  background-color: #1D5213;
+  border: solid #134D1F 2px;
+  background-color: #F4F4F4;
   padding: 0px 15px;
   flex-direction: row;
 }
@@ -27,12 +27,12 @@
 }
 
 .birth-date-data::placeholder {
-  color: #8D981E;
+  color: #8F8E8E;
   font-size: 14px;
 }
 
 .birth-date-data:focus::placeholder {
-  color: #727B1A;
+  color: #134D1F;
 }
 
 .birth-date-data:hover {
@@ -42,7 +42,7 @@
 .birth-date-divide-line::after {
   content: "/";
   font-size: 20px;
-  color: #727B1A;
+  color: #8F8E8E;
   line-height: 10px;
 }
 

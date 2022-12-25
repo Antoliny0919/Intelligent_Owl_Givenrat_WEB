@@ -20,7 +20,7 @@
 }
 
 [type="radio"]:checked {
-  border: 0.3em solid #B8C625;
+  border: 0.5em solid #134D1F;
 }
 
 [type="radio"]:focus-visible {

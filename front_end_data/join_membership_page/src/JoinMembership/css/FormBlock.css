@@ -25,8 +25,8 @@
 
 .again-button {
   font-size: 12px;
-  border: solid #8D981E 2px;
-  color: #8D981E;
+  border: solid #134D1F 2px;
+  color: #134D1F;
 }
 
 [type="submit"] {
@@ -38,7 +38,7 @@
   font-weight: 900;
   background-color: #125014;
   border: solid 2px #0E3E10;
-  color: #8D981E;
+  color: white;
   transition: all 0.7s;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -46,7 +46,7 @@
 [type="submit"]:hover {
 
   cursor: pointer;
-  color: #CEE82D;
+  color: #38A53B;
   transform: translateY(-5px);
 }
 
