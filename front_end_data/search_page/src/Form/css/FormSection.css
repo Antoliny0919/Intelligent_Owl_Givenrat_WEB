@@ -3,57 +3,34 @@
 .inputspace-block {
   display: flex;
   flex-direction: column;
-  padding: 1vw;
-  margin-left: 2.5vw;
-  margin-right: 2.5vw;
-  height: 7vw;
+  align-items: center;
+  padding: 0.4vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  height: 5vw;
   width: 15vw;
-  border-radius: 50px;
-  transition: all .5s;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: solid #275032 0.2vw;
+  border-radius: 30px;
 }
-
-.inputspace-block:hover {
-  transform: translateY(-2px);
-}
-
-.price {
-  border: 3px solid #CBD732;
-}
-
-.price:hover {
-  box-shadow: 0px 10px 15px #CBD732;
-}
-
-.name {
-  border: 3px solid #EAB831;
-}
-
-.name:hover {
-  box-shadow: 0px 10px 15px #EAB831;
-}
-
-.attribute {
-  border: 3px solid #31EA85;
-}
-
-.attribute:hover {
-  box-shadow: 0px 10px 15px #31EA85;
-}
-
 
 .item-attribution-name {
   text-align: center;
   font-family: 'Gowun Dodum', sans-serif;
-  font-size: 1.5vw;
-  color: #B8BF29;
+  font-size: 1.2vw;
+  color: white;
 }
 
 .item-attribution-inputspace {
-  padding: 1vw 3vw 1vw 3vw;
+  padding: 0.5vw 1vw;
+  width: 8vw;
+  font-size: 0.8vw;
   display: inline-block;
-  border-radius: 20px;
-  margin: 1vw;
-  background-color: #285D34;
-  border: 2px solid #307C24;
+  border-radius: 3px;
+  margin: 0.5vw;
+  background-color: white;
+  border: solid #275032 0.1vw;
+}
+
+.item-attribution-inputspace:focus {
+  outline: none;
 }

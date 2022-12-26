@@ -1,21 +1,18 @@
-import FormGroup from './FormGroup';
+import FormSection from './FormSection';
 import '../css/FormBlock.css';
 
-export default function FormBlock({ imgPath, formSection, searchProductFunc }) {
+export default function FormBlock({ formSection, searchFunc }) {
   
   return (
-    <div id='search-form-area'>
-      <div id='form-area-padding'>
-        <img src={imgPath} id='form-image'></img>
-        <div>
-          <form id="form-main">
-            <FormGroup
-            formSection={formSection}
-            searchProductFunc={searchProductFunc}
-            ></FormGroup>
-          </form>
-        </div>
-      </div>
-    </div>
+        <form id="search-form">
+          <div id="form-section-container">
+            {formSection.map((position) => {
+              return position.map(({name, style, queryName}) => {
+                return <FormSection key={name} queryName={queryName} inputText={name} inputStyle={style}></FormSection>
+              })
+            })}
+          </div>
+          <button button id="form-submit-button" type="submit" onClick={searchFunc}>검색 ⚲</button>
+        </form>
   )
 }

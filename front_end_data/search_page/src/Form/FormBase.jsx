@@ -13,11 +13,11 @@ export default function FormBase() {
     form_image : require('./img/questionbox.png'),
 
     // 첫번째 폼 라인의 데이터
-    form_first_section: [
+    form_section_data: [
       [
         // 가격 인풋 데이터
         {
-        name: '💲 가격 💲',
+        name: '가격',
         style: 'inputspace-block price',
         queryName: 'exact_price',
         }
@@ -25,7 +25,7 @@ export default function FormBase() {
       [
         // 품명 인풋 데이터
         {
-        name: '📦 품명 📦',
+        name: '품명',
         style: 'inputspace-block name',
         queryName: 'contains_name',
         }
@@ -33,7 +33,7 @@ export default function FormBase() {
       [
         {
         // 속성 인풋 데이터
-        name: '🔑 속성 🔑',
+        name: '속성',
         style: 'inputspace-block attribute',
         queryName: 'contains_first_attribute',
         }
@@ -41,7 +41,7 @@ export default function FormBase() {
       [
         {
         //속성 인풋 데이터
-        name: '🔑 속성 🔑',
+        name: '속성',
         style: 'inputspace-block attribute',
         queryName: 'contains_second_attribute',
         }
@@ -70,14 +70,15 @@ export default function FormBase() {
 
 
   return (
-    <div id="search-form-data-area">
-      <span id="dividing-line"></span>
-      <FormBlock
-      imgPath={state.form_image}
-      formSection={state.form_first_section}
-      searchProductFunc={searchProduct}
-      >
-      </FormBlock>
+    <div id="search-form-container-padding">
+      <div id="search-form-container-margin">
+        <div id="search-form-block">
+          <FormBlock 
+          formSection={state.form_section_data}
+          searchFunc={state.searchProduct}
+          ></FormBlock>
+        </div>
+      </div>
     </div> 
   )
 }
