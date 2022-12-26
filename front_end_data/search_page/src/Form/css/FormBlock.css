@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+#form-symbol-img {
+  width: 30%;
+  height: 18vw;
+  margin-bottom: 3vw;
+}
+
 #form-section-container {
   display: flex;
   flex-direction: row;
@@ -22,7 +28,7 @@
   background-color: #337542;
   font-family: 'Gowun Dodum', sans-serif;
   color: white;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   box-shadow: rgba(19, 78, 11, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 

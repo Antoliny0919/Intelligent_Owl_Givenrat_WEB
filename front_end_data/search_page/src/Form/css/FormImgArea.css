@@ -1,0 +1,11 @@
+#form-symbol-img-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#symbol-img {
+  width: 30%;
+  height: 20vw;
+  margin-bottom: 3vw;
+}

@@ -1,9 +1,13 @@
+import {Fragment} from 'react';
+import FormImgArea from './FormImgArea';
 import FormSection from './FormSection';
 import '../css/FormBlock.css';
 
-export default function FormBlock({ formSection, searchFunc }) {
+export default function FormBlock({ formSection, searchFunc, symbolImgPath }) {
   
   return (
+      <Fragment>
+        <FormImgArea symbolImgPath={symbolImgPath}></FormImgArea>
         <form id="search-form">
           <div id="form-section-container">
             {formSection.map((position) => {
@@ -14,5 +18,6 @@ export default function FormBlock({ formSection, searchFunc }) {
           </div>
           <button button id="form-submit-button" type="submit" onClick={searchFunc}>검색 ⚲</button>
         </form>
+      </Fragment>
   )
 }

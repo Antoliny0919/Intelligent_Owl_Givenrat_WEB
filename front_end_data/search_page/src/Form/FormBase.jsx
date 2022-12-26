@@ -75,7 +75,8 @@ export default function FormBase() {
         <div id="search-form-block">
           <FormBlock 
           formSection={state.form_section_data}
-          searchFunc={state.searchProduct}
+          searchFunc={searchProduct}
+          symbolImgPath={state.form_image}
           ></FormBlock>
         </div>
       </div>
