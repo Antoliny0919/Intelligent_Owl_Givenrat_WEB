@@ -7,6 +7,5 @@ urlpatterns = [
     path('', views.homepage),
     path('search/', views.searchpage),
     path('products/', views.ProductListAPIView.as_view()),
-    # path('products/',views.ProductDetailAPIView.as_view()),
 ]
 
