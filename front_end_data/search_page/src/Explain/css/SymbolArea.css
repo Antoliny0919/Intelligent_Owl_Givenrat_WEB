@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+#symbol-area-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#symbol-img {
+  height: 15vw;
+  width: 15vw;
+}
+
+#symbol-text {
+  display: block;
+  padding-bottom: 3vw;
+  font-size: 8vw;
+  font-family: 'Gowun Dodum', sans-serif;
+  font-weight: 900;
+  color: #1E4629;
+}

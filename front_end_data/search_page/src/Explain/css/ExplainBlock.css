@@ -1,0 +1,9 @@
+.explain-block-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.explain-step-text {
+  font-size: 3vw;
+}

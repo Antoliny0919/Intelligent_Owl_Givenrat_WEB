@@ -1,18 +1,9 @@
-@media screen and (min-width: 1450px) {
-  #explain-block {
-    max-width: 1500px;
-  }
+#explain-area-container {
+  padding-top: 7vw;
+  background-color: #F4F4F4;
 }
 
-#explain-area {
-  background-color: #376F46;
+#explain-area-margin {
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
-
-#explain-block {
-  display: block;
-  height: 100%;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-

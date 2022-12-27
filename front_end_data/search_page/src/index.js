@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
-import SymbolBase from './Symbol/SymbolBase';
 import ExplainBase from './Explain/ExplainBase';
 import FormBase from './Form/FormBase';
 import TableBase from './Table/TableBase';
@@ -13,7 +12,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-    <SymbolBase></SymbolBase>
     <ExplainBase></ExplainBase>
     <RecoilRoot>
       <FormBase></FormBase>
