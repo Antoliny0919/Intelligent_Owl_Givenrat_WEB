@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
 .explain-block-container {
   display: flex;
   flex-direction: column;
 }
 
+.explain-step-block {
+  padding-top: 5vw;
+}
 
-.explain-step-text {
-  font-size: 3vw;
+.explain-step-area {
+  font-size: 2vw;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 900;
+}
+
+.step {
+  color: #30663F;
+}
+
+.divide {
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  
 }

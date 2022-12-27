@@ -12,6 +12,7 @@ export default function ExplainBase() {
     <div id="explain-area-container">
       <div id="explain-area-margin">
         <SymbolArea logoImgPath={state.logoImgPath}></SymbolArea>
+        <div className="divide-line"></div>
         <ExplainBlock></ExplainBlock>
       </div>
     </div>

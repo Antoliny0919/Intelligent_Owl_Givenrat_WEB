@@ -7,3 +7,8 @@
   margin-left: 10vw;
   margin-right: 10vw;
 }
+
+.divide-line {
+  border: 0.2vw solid #275233;
+  background-color: #275233;
+}
