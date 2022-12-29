@@ -1,0 +1,20 @@
+.form-submit-button {
+  position: relative;
+  padding: 0.3vw 1vw;
+  border: 0.15vw solid #A3A3A3;
+  margin-top: 1.5vw;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  width: 10vw;
+  border-radius: 5px;
+  background-color: #337542;
+  font-family: 'Gowun Dodum', sans-serif;
+  color: white;
+  font-size: 1.3vw;
+  box-shadow: rgba(19, 78, 11, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.form-submit-button:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  top: 0.1rem;
+}

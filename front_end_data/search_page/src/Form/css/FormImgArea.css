@@ -1,11 +1,10 @@
 #form-symbol-img-area {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
-#symbol-img {
-  width: 30%;
+#symbol-img-search {
+  width: 100%;
   height: 20vw;
-  margin-bottom: 3vw;
 }

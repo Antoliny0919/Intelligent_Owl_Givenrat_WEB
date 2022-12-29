@@ -8,9 +8,10 @@
   
 }
 
-#symbol-img {
+#symbol-img-givenrat {
   height: 15vw;
   width: 15vw;
+  margin-bottom: 3vw;
 }
 
 #symbol-text {

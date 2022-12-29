@@ -11,6 +11,9 @@
 }
 
 #search-form-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border: solid #275032 2px;
   border-radius: 5px;
   background-color: #376F46;

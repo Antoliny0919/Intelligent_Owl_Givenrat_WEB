@@ -4,61 +4,9 @@ import FormBlock from './components/FormBlock';
 import './css/FormBase.css';
 
 
-const INPUTCOUNT = 4;
+const INPUTCOUNT = 5;
 
 export default function FormBase() {
-
-  const state = {
-    // form칸 왼쪽에 있을 심벌 이미지
-    form_image : require('./img/questionbox.png'),
-
-    // 첫번째 폼 라인의 데이터
-    form_section_data: [
-      [
-        // 가격 인풋 데이터
-        {
-          name: '가격',
-          style: 'inputspace-block price',
-          queryName: 'product_price',
-        }
-      ],
-      [
-        // 품명 인풋 데이터
-        {
-          name: '품명',
-          style: 'inputspace-block name',
-          queryName: 'product_name',
-        }
-      ],
-      [
-        // 브랜드 인풋 데이터
-        {
-          name: '브랜드',
-          style: 'inputspace-block brand',
-          queryName: 'product_brand',
-        }
-      ],
-      [
-        {
-        // 속성 인풋 데이터
-          name: '속성',
-          style: 'inputspace-block attribute',
-          queryName: 'product_first_attribute',
-        }
-      ],
-      [
-        {
-        //속성 인풋 데이터
-          name: '속성',
-          style: 'inputspace-block attribute',
-          queryName: 'product_second_attribute',
-        }
-      ],
-    ],
-  }
-
-  // 공산품 검색 키워드(input.value)
-  const [searchKeyWord, setSearchKeyWord] = useRecoilState(inputKeyWord)
 
   // input에서 사용자가 입력한 keyword를 추출해서 query로 만듬
   const searchProduct = (e) => {
@@ -76,13 +24,101 @@ export default function FormBase() {
     setSearchKeyWord(query);
   };
 
+  const initializationInputData = (e) => {
+    e.preventDefault();
+    console.log(e);
+  }
+  
+
+  const state = {
+    // form칸 왼쪽에 있을 심벌 이미지
+    form_image: require('./img/questionbox.png'),
+
+    section_data: [
+      // 첫번째행 섹션 데이터(가격, 품명, 브랜드)
+      [
+        [
+          {
+            id: 1,
+            inputName: '가격',
+            style: 'inputspace-block price',
+            queryName: 'product_price',
+            isButton: false,
+          }
+        ],
+        [
+          {
+            id: 2,
+            inputName: '품명',
+            style: 'inputspace-block name',
+            queryName: 'product_name',
+            isButton: false,
+          }
+        ],
+        [
+          {
+            id: 3,
+            inputName: '브랜드',
+            style: 'inputspace-block brand',
+            queryName: 'product_brand',
+            isButton: false,
+          }
+        ],
+      ],
+      
+      // 두번째행 섹션 데이터(속성1, 속성2, +submit 버튼)
+      [
+        [
+          {
+            id: 4,
+            inputName: '속성',
+            style: 'inputspace-block attribute',
+            queryName: 'product_first_attribute',
+            isButton: false,
+          },
+        ],
+        [
+          {
+            id: 5,
+            inputName: '속성',
+            style: 'inputspace-block attribute',
+            queryName: 'product_second_attribute',
+            isButton: false,
+          }
+        ],
+      ],
+    ],
+
+    button_data: [
+      [
+        {
+          id: 1,
+          buttonName: '⚲ 검색',
+          style: 'form-submit-button search',
+          onClickMethod: searchProduct,
+        }
+      ],
+      [
+        {
+          id: 2,
+          buttonName: '⎋ 초기화',
+          style: 'form-submit-button initialization',
+          onClickMethod: initializationInputData,
+        }
+      ],
+    ]
+  }
+
+  // 공산품 검색 키워드(input.value)
+  const [searchKeyWord, setSearchKeyWord] = useRecoilState(inputKeyWord)
 
   return (
     <div id="search-form-container-padding">
       <div id="search-form-container-margin">
         <div id="search-form-block">
-          <FormBlock 
-          formSection={state.form_section_data}
+          <FormBlock
+          sectionData={state.section_data}
+          buttonData={state.button_data}
           searchFunc={searchProduct}
           symbolImgPath={state.form_image}
           ></FormBlock>
