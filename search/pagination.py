@@ -8,7 +8,7 @@ class LargeResultsSetPagination(PageNumberPagination):
   def get_paginated_response(self, data):
     return Response(OrderedDict([
         ('count', self.page.paginator.count),
-        ('next', self.page.has_next()),
+        ('next', self.get_next_link()),
         ('results', data),
     ]))
   

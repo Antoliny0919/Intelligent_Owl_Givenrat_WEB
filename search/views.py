@@ -65,15 +65,17 @@ class CustomAPIView(APIView):
   
 
 class ProductFilter(django_filters.FilterSet):
-  exact_price = django_filters.CharFilter(field_name="price", lookup_expr="contains")
-  contains_name = django_filters.CharFilter(field_name="name", lookup_expr="contains")
-  contains_first_attribute = django_filters.CharFilter(field_name="attribute", lookup_expr="contains")
-  contains_second_attribute = django_filters.CharFilter(field_name="attribute", lookup_expr="contains")
+  product_price = django_filters.CharFilter(field_name="price", lookup_expr="contains")
+  product_name = django_filters.CharFilter(field_name="name", lookup_expr="contains")
+  product_brand = django_filters.CharFilter(field_name="brand", lookup_expr="contains")
+  
+  product_first_attribute = django_filters.CharFilter(field_name="attribute", lookup_expr="contains")
+  product_second_attribute = django_filters.CharFilter(field_name="attribute", lookup_expr="contains")
 
   class Meta:
     model = Product
-    exclude = ['price', 'name', 'attribute']
-    fields = ['price', 'name', 'attribute', 'attribute']
+    exclude = ['price', 'name', 'brand', 'attribute']
+    fields = ['price', 'name', 'brand', 'attribute', 'attribute']
 
 
 

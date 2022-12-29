@@ -17,33 +17,41 @@ export default function FormBase() {
       [
         // 가격 인풋 데이터
         {
-        name: '가격',
-        style: 'inputspace-block price',
-        queryName: 'exact_price',
+          name: '가격',
+          style: 'inputspace-block price',
+          queryName: 'product_price',
         }
       ],
       [
         // 품명 인풋 데이터
         {
-        name: '품명',
-        style: 'inputspace-block name',
-        queryName: 'contains_name',
+          name: '품명',
+          style: 'inputspace-block name',
+          queryName: 'product_name',
+        }
+      ],
+      [
+        // 브랜드 인풋 데이터
+        {
+          name: '브랜드',
+          style: 'inputspace-block brand',
+          queryName: 'product_brand',
         }
       ],
       [
         {
         // 속성 인풋 데이터
-        name: '속성',
-        style: 'inputspace-block attribute',
-        queryName: 'contains_first_attribute',
+          name: '속성',
+          style: 'inputspace-block attribute',
+          queryName: 'product_first_attribute',
         }
       ],
       [
         {
         //속성 인풋 데이터
-        name: '속성',
-        style: 'inputspace-block attribute',
-        queryName: 'contains_second_attribute',
+          name: '속성',
+          style: 'inputspace-block attribute',
+          queryName: 'product_second_attribute',
         }
       ],
     ],
