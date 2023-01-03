@@ -23,5 +23,21 @@
 .divide {
   margin-left: 0.5vw;
   margin-right: 0.5vw;
-  
+}
+
+.explain-img {
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+  height: 20vw;
+  width: 70%
+}
+
+.explain-text {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-weight: 900;
+  font-size: 1.5vw;
+}
+
+.step2 {
+  margin-top: 1vw;
 }
