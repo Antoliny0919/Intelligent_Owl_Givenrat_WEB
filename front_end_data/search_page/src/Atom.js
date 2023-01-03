@@ -19,3 +19,8 @@ export const if_no_data = atom({
   key: 'if_no_data',
   default: false,
 })
+
+export const inputTextControl = atom({
+  key: 'inputTextControl',
+  default: '',
+})

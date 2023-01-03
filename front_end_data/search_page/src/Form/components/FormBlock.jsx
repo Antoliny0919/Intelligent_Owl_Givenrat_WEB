@@ -15,8 +15,8 @@ export default function FormBlock({ sectionData, buttonData, symbolImgPath }) {
           })}
           <div className='form-button-container'>
             {buttonData.map((item) => {
-              return item.map(({id, buttonName, style, onClickMethod}) => {
-                return <FormButton id={id} buttonName={buttonName} style={style} method={onClickMethod}></FormButton>
+              return item.map(({id, buttonName, style, onClickMethod, type}) => {
+                return <FormButton id={id} buttonName={buttonName} style={style} method={onClickMethod} type={type}></FormButton>
               })
             })}
           </div>

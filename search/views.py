@@ -68,7 +68,6 @@ class ProductFilter(django_filters.FilterSet):
   product_price = django_filters.CharFilter(field_name="price", lookup_expr="contains")
   product_name = django_filters.CharFilter(field_name="name", lookup_expr="contains")
   product_brand = django_filters.CharFilter(field_name="brand", lookup_expr="contains")
-  
   product_first_attribute = django_filters.CharFilter(field_name="attribute", lookup_expr="contains")
   product_second_attribute = django_filters.CharFilter(field_name="attribute", lookup_expr="contains")
 
@@ -79,19 +78,19 @@ class ProductFilter(django_filters.FilterSet):
 
 
 
-class ProductListAPIView(CustomAPIView, LargeResultsSetPagination):
+class ProductList(CustomAPIView, LargeResultsSetPagination):
   filter_backends = (DjangoFilterBackend,)
   filterset_class = ProductFilter
   
   def get(self, request):
-      queryset = self.filter_queryset(self.get_queryset())
-      result_page = self.paginate_queryset(queryset, request)
-      if result_page is not None:
-          serializer = ProductSerializer(result_page, many=True, context={'request':request})
-          return self.get_paginated_response(serializer.data)
-      serializer = ProductSerializer(queryset, many=True)
-      response = Response(serializer.data, status=status.HTTP_200_OK)
-      return response
+    queryset = self.filter_queryset(self.get_queryset())
+    result_page = self.paginate_queryset(queryset, request)
+    if result_page is not None:
+        serializer = ProductSerializer(result_page, many=True, context={'request':request})
+        return self.get_paginated_response(serializer.data)
+    serializer = ProductSerializer(queryset, many=True)
+    response = Response(serializer.data, status=status.HTTP_200_OK)
+    return response
 
   
   def post(self, request):
@@ -100,6 +99,7 @@ class ProductListAPIView(CustomAPIView, LargeResultsSetPagination):
       serializer.save()
       return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 

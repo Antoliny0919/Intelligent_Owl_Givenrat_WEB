@@ -1,10 +1,10 @@
 import '../css/FormButton.css';
 
 
-export default function FormButton({id, buttonName, style, method}) {
+export default function FormButton({id, buttonName, style, method, type}) {
   return (
     <div>
-      <button onClick={method} className={style} key={id}>{buttonName}</button>
+      <input type={type} method={method} className={style} key={id} value={buttonName}></input>
     </div>
   )
 }

@@ -8,6 +8,9 @@ const INPUTCOUNT = 5;
 
 export default function FormBase() {
 
+  // 공산품 검색 키워드(input.value)
+  const [searchKeyWord, setSearchKeyWord] = useRecoilState(inputKeyWord)
+
   // input에서 사용자가 입력한 keyword를 추출해서 query로 만듬
   const searchProduct = (e) => {
     e.preventDefault();
@@ -23,11 +26,6 @@ export default function FormBase() {
     }
     setSearchKeyWord(query);
   };
-
-  const initializationInputData = (e) => {
-    e.preventDefault();
-    console.log(e);
-  }
   
 
   const state = {
@@ -96,6 +94,7 @@ export default function FormBase() {
           buttonName: '⚲ 검색',
           style: 'form-submit-button search',
           onClickMethod: searchProduct,
+          type: "button",
         }
       ],
       [
@@ -103,14 +102,12 @@ export default function FormBase() {
           id: 2,
           buttonName: '⎋ 초기화',
           style: 'form-submit-button initialization',
-          onClickMethod: initializationInputData,
+          onClickMethod: false,
+          type: "reset",
         }
       ],
     ]
   }
-
-  // 공산품 검색 키워드(input.value)
-  const [searchKeyWord, setSearchKeyWord] = useRecoilState(inputKeyWord)
 
   return (
     <div id="search-form-container-padding">
