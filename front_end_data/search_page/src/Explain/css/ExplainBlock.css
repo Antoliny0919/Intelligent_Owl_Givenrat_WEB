@@ -37,7 +37,21 @@
   font-weight: 900;
   font-size: 1.5vw;
 }
+.step1 {
+  margin: 0;
+}
 
 .step2 {
-  margin-top: 1vw;
+  margin-top: 5vw;
+  margin-bottom: 2vw;
+}
+
+.step3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.plus {
+  margin-top: 4vw;
+  color: #F4F4F4
 }
