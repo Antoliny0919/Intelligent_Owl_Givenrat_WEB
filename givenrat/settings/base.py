@@ -55,10 +55,13 @@ INSTALLED_APPS = [
     
     'phonenumber_field',
     'rest_framework',
+    'rest_framework_simplejwt',
     'corsheaders',
     'django_filters',
+    
     'search',
     'users',
+    'login',
 
 ]
 
@@ -106,6 +109,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASS': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 
