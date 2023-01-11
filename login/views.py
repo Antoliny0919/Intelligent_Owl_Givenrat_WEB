@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from rest_framework.views import APIView
-from ..users.models import User
+from users.models import User
 
 
 # Create your views here.
