@@ -4,13 +4,13 @@ import json
 url = 'http://127.0.0.1:8000/register/'
 
 body = {
-        'username': 'dltlehfld0324~',
-        'email': 'dltlehfld0324@naver.com',
+        'username': 'dltlehfld0325',
+        'email': 'dltlehfld0325@naver.com',
         'password': 'tlgus0919!',
-        'company_name': '해송유통징',
-        'company_phone_number': '010-2353-6323',
-        'fax_number': '211315321',
-        'company_address': '어디일까'
+        'company_name': '해송유통징오',
+        'company_phone_number': '010-2053-6323',
+        'fax_number': '2104352321',
+        'company_address': '어디일까요'
         }
 
 params = {}
